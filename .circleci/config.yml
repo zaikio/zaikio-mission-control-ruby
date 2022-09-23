@@ -1,0 +1,66 @@
+version: 2.1
+jobs:
+  test:
+    docker:
+      - image: circleci/ruby:3.1.2
+      - image: circleci/redis:3.2-alpine
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run:
+          name: install dependencies
+          command: |
+            gem install bundler:2.1.4 && bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+      # run tests!
+      - run:
+          name: run tests
+          command: |
+            bundle exec rake test
+
+  publish:
+    docker:
+      - image: circleci/ruby:3.0.2
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Build package
+          command: gem build zaikio-mission-control.gemspec
+      - run:
+          name: Push package
+          command: |
+            VERSION=$(ruby -r "./lib/zaikio/mission_control/version.rb" -e "print Zaikio::MissionControl::VERSION")
+            gem push zaikio-mission-control-${VERSION}.gem
+
+workflows:
+  default:
+    jobs:
+      - test:
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              only: /.*/
+      - publish:
+          context:
+            - rubygems-push
+          requires: [test]
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
