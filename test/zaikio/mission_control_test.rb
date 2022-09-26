@@ -104,6 +104,37 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
     )
   end
 
+  test "lists all finishings" do
+    assert_equal(
+      [
+        Zaikio::MissionControl::Finishings::CombBinding,
+        Zaikio::MissionControl::Finishings::Embossing,
+        Zaikio::MissionControl::Finishings::FoilStamp,
+        Zaikio::MissionControl::Finishings::Glue,
+        Zaikio::MissionControl::Finishings::HeadBand,
+        Zaikio::MissionControl::Finishings::Hole,
+        Zaikio::MissionControl::Finishings::Lamination,
+        Zaikio::MissionControl::Finishings::PerfectBinding,
+        Zaikio::MissionControl::Finishings::Perforation,
+        Zaikio::MissionControl::Finishings::RingBinding,
+        Zaikio::MissionControl::Finishings::SaddleStitch,
+        Zaikio::MissionControl::Finishings::SpiralBinding,
+        Zaikio::MissionControl::Finishings::StripBinding,
+        Zaikio::MissionControl::Finishings::ThreadSewing
+      ],
+      Zaikio::MissionControl.finishing_klasses
+    )
+
+    assert_equal(
+      %i[
+        comb_binding embossing foil_stamp glue head_band hole
+        lamination perfect_binding perforation ring_binding
+        saddle_stitch spiral_binding strip_binding thread_sewing
+      ],
+      Zaikio::MissionControl.finishings
+    )
+  end
+
   test "returns jobs and parts config" do
     assert_equal(
       %i[

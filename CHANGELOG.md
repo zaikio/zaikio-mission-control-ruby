@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Add finishings specification
 - Add jobs and parts specification
 
 [Unreleased]: https://github.com/zaikio/zaikio-mission-control-ruby/compare/HEAD..HEAD
