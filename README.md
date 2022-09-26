@@ -42,6 +42,11 @@ Zaikio::MissionControl.parts => #[:back, :base, ...]
 
 Zaikio::MissionControl.job_klasses => # [Zaikio::MissionControl::Jobs::Booklet, Zaikio::MissionControl::Jobs::Box, ...]
 Zaikio::MissionControl.part_klasses => # [Zaikio::MissionControl::Parts::Back, Zaikio::MissionControl::Parts::Base, ...]
+
+# Localize models
+I18n.with_locale(:de) do
+  Zaikio::MissionControl::Jobs::Booklet.model_name.human # => Heft
+end
 ```
 
 Per job you can fetch the parts and their configuration:

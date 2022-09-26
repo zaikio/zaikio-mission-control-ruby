@@ -43,7 +43,8 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
         Zaikio::MissionControl::Jobs::Postcard,
         Zaikio::MissionControl::Jobs::Poster,
         Zaikio::MissionControl::Jobs::SelfMailer,
-        Zaikio::MissionControl::Jobs::Sheet
+        Zaikio::MissionControl::Jobs::Sheet,
+        Zaikio::MissionControl::Jobs::SoftcoverBook
       ],
       Zaikio::MissionControl.job_klasses
     )
@@ -54,7 +55,7 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
         compliment_slip continuation_sheet cover_letter envelope
         flyer hardcover_book label leaflet letter_head magazine
         map ncr_pad newspaper notebook postcard poster
-        self_mailer sheet
+        self_mailer sheet softcover_book
       ],
       Zaikio::MissionControl.jobs
     )
@@ -127,5 +128,13 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
       ],
       Zaikio::MissionControl::Jobs::Booklet.part_klasses
     )
+  end
+
+  test "translates model names" do
+    I18n.default_locale = :en
+    I18n.config.available_locales = %i[en de]
+    I18n.with_locale(:de) do
+      assert_equal "Heft", Zaikio::MissionControl::Jobs::Booklet.model_name.human
+    end
   end
 end

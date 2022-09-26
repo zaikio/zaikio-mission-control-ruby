@@ -30,6 +30,7 @@ require "zaikio/mission_control/jobs/postcard"
 require "zaikio/mission_control/jobs/poster"
 require "zaikio/mission_control/jobs/self_mailer"
 require "zaikio/mission_control/jobs/sheet"
+require "zaikio/mission_control/jobs/softcover_book"
 
 # Parts
 require "zaikio/mission_control/parts/base"
@@ -71,6 +72,7 @@ module Zaikio
         yield(configuration)
 
         Base.connection = create_connection
+        I18n.load_path << Dir["#{File.expand_path('config/locales')}/*.yml"]
       end
 
       def with_token(token, &block)
