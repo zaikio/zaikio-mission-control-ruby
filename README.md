@@ -7,7 +7,7 @@ Ruby API Client for Zaikio Mission Control.
 ### 1. Add this line to your application's Gemfile:
 
 ```ruby
-gem 'zaikio-mission-control'
+gem 'zaikio-mission_control'
 ```
 
 And then execute:
@@ -17,7 +17,7 @@ $ bundle
 
 Or install it yourself as:
 ```bash
-$ gem install zaikio-mission-control
+$ gem install zaikio-mission_control
 ```
 
 ### 2. Configure the gem:

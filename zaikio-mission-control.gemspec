@@ -3,7 +3,7 @@ $LOAD_PATH.push File.expand_path("lib", __dir__)
 require "zaikio/mission_control/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "zaikio-mission-control"
+  spec.name          = "zaikio-mission_control"
   spec.version       = Zaikio::MissionControl::VERSION
   spec.authors       = ["Zaikio GmbH"]
   spec.email         = ["dev@zaikio.com"]
@@ -13,8 +13,8 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
 
   if spec.respond_to?(:metadata)
-    spec.metadata["changelog_uri"] = "https://github.com/zaikio/zaikio-mission-control-ruby/blob/main/CHANGELOG.md"
-    spec.metadata["source_code_uri"] = "https://github.com/zaikio/zaikio-mission-control-ruby"
+    spec.metadata["changelog_uri"] = "https://github.com/zaikio/zaikio-mission_control-ruby/blob/main/CHANGELOG.md"
+    spec.metadata["source_code_uri"] = "https://github.com/zaikio/zaikio-mission_control-ruby"
   end
 
   spec.files = Dir[

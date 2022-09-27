@@ -39,12 +39,12 @@ jobs:
       - checkout
       - run:
           name: Build package
-          command: gem build zaikio-mission-control.gemspec
+          command: gem build zaikio-mission_control.gemspec
       - run:
           name: Push package
           command: |
             VERSION=$(ruby -r "./lib/zaikio/mission_control/version.rb" -e "print Zaikio::MissionControl::VERSION")
-            gem push zaikio-mission-control-${VERSION}.gem
+            gem push zaikio-mission_control-${VERSION}.gem
 
 workflows:
   default:
