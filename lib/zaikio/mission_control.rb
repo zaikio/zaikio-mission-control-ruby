@@ -59,6 +59,23 @@ require "zaikio/mission_control/parts/poster"
 require "zaikio/mission_control/parts/self_mailer"
 require "zaikio/mission_control/parts/sheet"
 
+# Finishings
+require "zaikio/mission_control/finishings/base"
+require "zaikio/mission_control/finishings/comb_binding"
+require "zaikio/mission_control/finishings/embossing"
+require "zaikio/mission_control/finishings/foil_stamp"
+require "zaikio/mission_control/finishings/glue"
+require "zaikio/mission_control/finishings/head_band"
+require "zaikio/mission_control/finishings/hole"
+require "zaikio/mission_control/finishings/lamination"
+require "zaikio/mission_control/finishings/perforation"
+require "zaikio/mission_control/finishings/ring_binding"
+require "zaikio/mission_control/finishings/perfect_binding"
+require "zaikio/mission_control/finishings/saddle_stitch"
+require "zaikio/mission_control/finishings/spiral_binding"
+require "zaikio/mission_control/finishings/strip_binding"
+require "zaikio/mission_control/finishings/thread_sewing"
+
 module Zaikio
   module MissionControl
     class << self
@@ -96,12 +113,23 @@ module Zaikio
                                                        .select { |c| c.is_a?(Class) }
       end
 
+      def finishing_klasses
+        @finishing_klasses ||= Zaikio::MissionControl::Finishings
+                               .constants.sort
+                               .map { |c| Zaikio::MissionControl::Finishings.const_get(c) }
+                               .select { |c| c.is_a?(Class) } - [Zaikio::MissionControl::Finishings::Base]
+      end
+
       def jobs
         @jobs ||= job_klasses.map { |k| k.name.demodulize.underscore.to_sym }
       end
 
       def parts
         @parts ||= part_klasses.map { |k| k.name.demodulize.underscore.to_sym }
+      end
+
+      def finishings
+        @finishings ||= finishing_klasses.map { |k| k.name.demodulize.underscore.to_sym }
       end
     end
   end

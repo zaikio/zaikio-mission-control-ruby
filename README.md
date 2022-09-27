@@ -32,16 +32,18 @@ end
 
 ## Usage
 
-### Jobs & Parts specification
+### Specifications
 
 This gem contains helper methods to list jobs and parts and to understand which parts a job consists of.
 
 ```rb
 Zaikio::MissionControl.jobs => #[:booklet, :box, ...]
 Zaikio::MissionControl.parts => #[:back, :base, ...]
+Zaikio::MissionControl.finishings => #[:comb_binding, :embossing, ...]
 
 Zaikio::MissionControl.job_klasses => # [Zaikio::MissionControl::Jobs::Booklet, Zaikio::MissionControl::Jobs::Box, ...]
 Zaikio::MissionControl.part_klasses => # [Zaikio::MissionControl::Parts::Back, Zaikio::MissionControl::Parts::Base, ...]
+Zaikio::MissionControl.finishing_klasses => # [Zaikio::MissionControl::Finishings::CombBinding, Zaikio::MissionControl::Finishings::Embossing, ...]
 
 # Localize models
 I18n.with_locale(:de) do
