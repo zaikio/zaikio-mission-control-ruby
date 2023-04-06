@@ -1,0 +1,103 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://mc.zaikio.test/api/v1/jobs
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.3
+      Authorization:
+      - Bearer eyJraWQiOiI0ZmZhNTc5MmQwMTJlMjY0YTEzODk5ZmZkYTA3YmVhYzkwOTA4NjRhNmY4MWU5YjQxMGNkOTFkY2UxOTNlODg3IiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJaQUkiLCJzdWIiOiJPcmdhbml6YXRpb24vOWQ2YmExM2YtN2QzYi00ZjI4LWIzZTMtYmRiMThjOGEyNjY4IiwiYXVkIjpbImtleWxpbmVfY2xhc3NpYyJdLCJqdGkiOiI4ZTBiOTI0MC1mNTdjLTQ4MjMtYTlmMi1lYjZkMzhkZGNiYmQiLCJuYmYiOjE2ODA1OTM5MDMsImV4cCI6MTY4MDU5NzUwMywiamt1IjoiaHR0cHM6Ly9odWIuc2FuZGJveC56YWlraW8uY29tL2FwaS92MS9qd3RfcHVibGljX2tleXMiLCJzY29wZSI6WyJkaXJlY3RvcnkubWFjaGluZXMucnciLCJkaXJlY3Rvcnkub3JnYW5pemF0aW9uLnIiLCJkaXJlY3Rvcnkub3JnYW5pemF0aW9uX21lbWJlcnMucnciLCJkaXJlY3Rvcnkuc2l0ZXMucnciLCJkaXJlY3Rvcnkuc3BlY2lhbGlzdHMucnciLCJtaXNzaW9uX2NvbnRyb2wuY29tbWlzc2lvbmluZ3MucnciLCJtaXNzaW9uX2NvbnRyb2wuZXN0aW1hdGVzLnJ3IiwibWlzc2lvbl9jb250cm9sLmpvYnMucnciLCJtaXNzaW9uX2NvbnRyb2wubGlzdHMucnciLCJtaXNzaW9uX2NvbnRyb2wub3JkZXJzLnJ3IiwicHJvY3VyZW1lbnRfY29uc3VtZXIuYXJ0aWNsZV9iYXNlLnIiLCJwcm9jdXJlbWVudF9jb25zdW1lci5jb250cmFjdHMucnciLCJwcm9jdXJlbWVudF9jb25zdW1lci5tYXRlcmlhbF9yZXF1aXJlbWVudHMucnciLCJwcm9jdXJlbWVudF9jb25zdW1lci5vcmRlcnMucnciLCJ3YXJlaG91c2UuY29uc3VtcHRpb25zX2FuZF9yZXNlcnZhdGlvbnMucnciLCJ3YXJlaG91c2UuZmluaXNoZWRfZ29vZHNfY2FsbF9vZmZzLnIiLCJ3YXJlaG91c2Uuc3RvY2tfbGV2ZWxzLnJ3Iiwid2FyZWhvdXNlLndhcmVob3VzZXMucnciXX0.vyJ1Q8UsYbNTBIalGxYcTao6CdqTjwPvAsdw8P3A84XGJeggeyMjiPbqioOr6AXhwpFjqrcjYw2xms69RTIDT_EYs6_0JzJQMujtuq04hqIPx2oOphMKCgjcoVkSjsnl--lW_qZj-FCVbcXoV9KQmVm7cfQK6pzA6k-1Qf_3ln-mvN32nOE7JPO6fDl_yebUpfvOKlgultLxxDtM8nHhiArpCvp5StZlFUVjUUhb_qI6uX58Z9Wk3j-7WrOdjtvtaN0CrknKV8GPWQNJMlWrF1uqA3t5X-KWRi5NyzeqgRZQ_t5Wcig_uMbrIn5cPt4dUdiaceQdzfzGm9wON00MhA
+      Accept-Language:
+      - en
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 04 Apr 2023 07:38:42 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Link:
+      - <https://mc.zaikio.test/api/v1/jobs?page=1&per_page=100>; rel="first",
+        <https://mc.zaikio.test/api/v1/jobs?page=1&per_page=100>; rel="last"
+      Current-Page:
+      - '1'
+      Total-Pages:
+      - '1'
+      Total-Count:
+      - '29'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"0b85cdde97d5cce815f2ffbac035cb7c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7bfbaeb5-7137-4754-bedf-300f7e1d8645
+      X-Runtime:
+      - '0.034826'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Origin
+      Content-Length:
+      - '14783'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":"b1cc3531-ea11-4f94-b35f-cccaaed4a4c5","name":"Brochure, 148.0
+        × 210.0 mm, black","state":"prepress","kind":"brochure","references":["JO/FDWEEV","JO/96Z1PB"],"source":"2565","version":null,"due_at":"2016-10-20T12:00:00.000Z","quantity":1000,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:16.288Z","updated_at":"2023-04-04T07:08:28.264Z","estimated_completed_at":null},{"id":"07327573-92b2-4841-8737-78af16771316","name":"Sheet,
+        130.0 × 108.0 mm, cyan / magenta / yellow / black","state":"press","kind":"sheet","references":["JO/M1DZN6","JO/Z89KR2"],"source":"2318","version":null,"due_at":"2023-04-04T17:24:15.642Z","quantity":3663,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:14.543Z","updated_at":"2023-04-04T07:08:25.228Z","estimated_completed_at":"2023-04-04T17:24:15.642Z"},{"id":"c960ab2c-7a80-4f27-8c37-4ef0218ac970","name":"Brochure,
+        210.0 × 297.0 mm, cyan / magenta / yellow / black","state":"completed","kind":"brochure","references":["JO/F689RA","JO/SKSE14"],"source":"2392","version":null,"due_at":"2016-10-21T15:00:00.000Z","quantity":100,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:14.808Z","updated_at":"2023-04-04T07:08:25.744Z","estimated_completed_at":"2016-10-17T14:50:57.000Z"},{"id":"62b172e4-64ab-471c-b506-5989184a4085","name":"Sheet,
+        94.0 × 36.0 mm, cyan / magenta / yellow / black","state":"completed","kind":"sheet","references":["JO/BA2FZP","JO/ARB9FC"],"source":"2393","version":null,"due_at":null,"quantity":40,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:15.058Z","updated_at":"2023-04-04T07:08:26.238Z","estimated_completed_at":"2016-10-20T13:59:12.000Z"},{"id":"189ad998-d753-4f6d-a9e1-227820d3265f","name":"Sheet,
+        66.0 × 25.0 mm, cyan / magenta / yellow / black","state":"completed","kind":"sheet","references":["JO/SEEZ61","JO/26AR2W"],"source":"2394","version":null,"due_at":null,"quantity":30,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:15.276Z","updated_at":"2023-04-04T07:08:26.697Z","estimated_completed_at":"2016-10-20T13:59:03.000Z"},{"id":"4c994ed7-37ae-4ee0-9af5-73a9c5f602b8","name":"Business
+        card, 85.0 × 55.0 mm, black / cyan / magenta / yellow","state":"completed","kind":"business_card","references":["JO/FCR9AW","JO/GQ2DQM"],"source":"2494","version":null,"due_at":"2016-11-07T16:00:00.000Z","quantity":4000,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:15.493Z","updated_at":"2023-04-04T07:08:27.107Z","estimated_completed_at":"2016-11-03T16:12:01.000Z"},{"id":"448930e0-cf9c-42c7-8cba-a3bca45eaba0","name":"Brochure,
+        210.0 × 297.0 mm, cyan / magenta / yellow / black","state":"completed","kind":"brochure","references":["JO/47PB8N","JO/DDX8SR"],"source":"2516","version":null,"due_at":"2016-11-08T14:00:00.000Z","quantity":150,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:15.713Z","updated_at":"2023-04-04T07:08:27.573Z","estimated_completed_at":"2016-11-06T23:52:32.000Z"},{"id":"b9610936-5ca6-4183-b5e2-2685e2bbb4c7","name":"Brochure,
+        210.0 × 297.0 mm, cyan / magenta / yellow / black","state":"completed","kind":"brochure","references":["JO/RGFEDG","JO/UNNDBG"],"source":"2528","version":null,"due_at":"2016-11-25T16:00:00.000Z","quantity":900,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:15.974Z","updated_at":"2023-04-04T07:08:28.175Z","estimated_completed_at":"2016-12-26T10:15:50.000Z"},{"id":"ae35a38b-0ed8-43d8-9f88-a8dcf7961566","name":"Brochure,
+        148.0 × 210.0 mm, black","state":"prepress","kind":"brochure","references":["JO/6EHEK9","JO/PGWGF1"],"source":"2572","version":null,"due_at":"2016-10-19T15:00:00.000Z","quantity":1000,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:16.558Z","updated_at":"2023-04-04T07:08:28.947Z","estimated_completed_at":null},{"id":"23db509b-8389-4014-9a42-8f459c198833","name":"Sheet,
+        220.0 × 210.0 mm, cyan / magenta / yellow / black","state":"completed","kind":"sheet","references":["JO/FD7WSP","JO/GGTDKE"],"source":"2584","version":null,"due_at":"2016-10-19T10:00:00.000Z","quantity":250,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:16.863Z","updated_at":"2023-04-04T07:08:29.580Z","estimated_completed_at":"2016-10-20T13:58:59.000Z"},{"id":"46232672-1ac9-4175-999f-ea7f0ea4891e","name":"Label,
+        148.0 × 210.0 mm, cyan / magenta / yellow / black","state":"completed","kind":"label","references":["JO/V8AQMW","JO/2C3GNB"],"source":"2585","version":null,"due_at":"2016-10-26T15:00:00.000Z","quantity":2000,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:17.087Z","updated_at":"2023-04-04T07:08:30.194Z","estimated_completed_at":"2016-11-06T23:52:31.000Z"},{"id":"801d7edd-9458-431c-96b4-ece3b3f44633","name":"Sheet,
+        235.0 × 110.0 mm, cyan / magenta / yellow / black","state":"completed","kind":"sheet","references":["JO/GWPACX","JO/GGGASB"],"source":"2631","version":null,"due_at":"2016-10-26T13:00:00.000Z","quantity":1000,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:17.552Z","updated_at":"2023-04-04T07:08:30.780Z","estimated_completed_at":"2016-11-06T23:52:28.000Z"},{"id":"c008bc56-280f-41f4-8142-9dabf79fc92d","name":"Sheet,
+        130.0 × 60.0 mm, cyan / magenta / yellow / black","state":"completed","kind":"sheet","references":["JO/MCQP6K","JO/EA4EWE"],"source":"2656","version":null,"due_at":"2016-10-21T14:00:00.000Z","quantity":237,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:17.779Z","updated_at":"2023-04-04T07:08:31.270Z","estimated_completed_at":"2016-11-06T23:52:10.000Z"},{"id":"5d87785d-f038-4ac4-ac7e-f175cf3d1175","name":"Sheet,
+        210.0 × 297.0 mm, cyan / magenta / yellow / black","state":"completed","kind":"sheet","references":["JO/MRQ4GK","JO/TKUXCT"],"source":"2669","version":null,"due_at":"2016-10-20T15:00:00.000Z","quantity":133,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:18.014Z","updated_at":"2023-04-04T07:08:31.707Z","estimated_completed_at":"2016-11-06T23:52:04.000Z"},{"id":"495115a0-bc7b-4aa6-8f12-0d9621939050","name":"Sheet,
+        130.0 × 60.0 mm, cyan / magenta / yellow / black","state":"completed","kind":"sheet","references":["JO/VDNTQ1","JO/UHDQKA"],"source":"2686","version":null,"due_at":"2016-10-21T14:00:00.000Z","quantity":32,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:18.250Z","updated_at":"2023-04-04T07:08:18.382Z","estimated_completed_at":"2016-10-21T15:12:50.000Z"},{"id":"06e2b06a-f5a1-4f3a-a98d-67eaca0694d9","name":"Sheet,
+        210.0 × 297.0 mm, cyan / magenta / yellow / black","state":"completed","kind":"sheet","references":["JO/SDQNGH","JO/VPUWHE"],"source":"2687","version":null,"due_at":"2016-10-20T15:00:00.000Z","quantity":5,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:18.489Z","updated_at":"2023-04-04T07:08:18.634Z","estimated_completed_at":"2016-11-04T09:57:27.000Z"},{"id":"b02a7569-e631-4faf-bfd5-22c7618c1ec8","name":"Sheet,
+        220.0 × 280.0 mm, cyan / magenta / yellow / black","state":"completed","kind":"sheet","references":["JO/8S6HDA","JO/Q4W22N"],"source":"2690","version":null,"due_at":"2016-10-24T15:00:00.000Z","quantity":1,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:18.736Z","updated_at":"2023-04-04T07:08:32.669Z","estimated_completed_at":"2016-11-07T15:36:08.000Z"},{"id":"cb0304df-7f84-4220-a9cb-9c743714619b","name":"Sheet,
+        99.0 × 210.0 mm, cyan / magenta / yellow / black","state":"completed","kind":"sheet","references":["JO/DACKVN","JO/4G239S"],"source":"2695","version":null,"due_at":"2016-10-27T15:00:00.000Z","quantity":800,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:19.027Z","updated_at":"2023-04-04T07:08:33.172Z","estimated_completed_at":"2016-11-06T23:51:53.000Z"},{"id":"01de6efa-87a6-448b-be39-f6daec0cf7b3","name":"Sheet,
+        210.0 × 297.0 mm, cyan / magenta / yellow / black","state":"press","kind":"sheet","references":["JO/S7XQXP","JO/6KHTT4"],"source":"2696","version":null,"due_at":"2023-04-04T08:24:11.777Z","quantity":2000,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:19.362Z","updated_at":"2023-04-04T07:08:33.340Z","estimated_completed_at":"2023-04-04T08:24:11.777Z"},{"id":"1c8c00a3-66e5-436c-aff2-cbcdab8f9d60","name":"Business
+        card, 85.0 × 55.0 mm, black","state":"completed","kind":"business_card","references":["JO/B2U62D","JO/G9PWVU"],"source":"2698","version":null,"due_at":"2016-11-04T16:00:00.000Z","quantity":800,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:19.666Z","updated_at":"2023-04-04T07:08:19.803Z","estimated_completed_at":"2016-11-06T23:51:53.000Z"},{"id":"1aff9132-b6d4-45fa-b0e2-b828cacc74d8","name":"Business
+        card, 85.0 × 55.0 mm, black / blue 072","state":"completed","kind":"business_card","references":["JO/PVDQMV","JO/7GHQF1"],"source":"2735","version":null,"due_at":"2016-10-26T15:00:00.000Z","quantity":600,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:20.093Z","updated_at":"2023-04-04T07:08:34.488Z","estimated_completed_at":"2016-11-06T23:51:26.000Z"},{"id":"32a09cdd-85c0-4c2d-b272-64ea6588e24f","name":"Brochure,
+        210.0 × 148.0 mm, cyan / magenta / yellow / black","state":"press","kind":"brochure","references":["JO/A7UXB8","JO/KWSGMR"],"source":"2736","version":null,"due_at":"2023-04-04T23:36:45.076Z","quantity":40,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:20.308Z","updated_at":"2023-04-04T07:08:35.032Z","estimated_completed_at":"2023-04-04T23:36:45.076Z"},{"id":"107d7738-010a-4aa8-a518-d10feff4f6a9","name":"Business
+        card, 85.0 × 55.0 mm, black","state":"press","kind":"business_card","references":["JO/F3RTSD","JO/G4X24K"],"source":"2760","version":null,"due_at":"2023-04-04T22:38:25.970Z","quantity":300,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:20.560Z","updated_at":"2023-04-04T07:08:35.090Z","estimated_completed_at":"2023-04-04T22:38:25.970Z"},{"id":"3737e536-bc09-43fc-b035-2ee1e352da6b","name":"Business
+        card, 85.0 × 55.0 mm, black","state":"completed","kind":"business_card","references":["JO/9CRDKE","JO/TNBBHD"],"source":"2774","version":null,"due_at":"2016-10-27T15:00:00.000Z","quantity":200,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:20.779Z","updated_at":"2023-04-04T07:08:35.870Z","estimated_completed_at":"2016-11-06T23:51:08.000Z"},{"id":"d84c1218-06ea-4d0a-bb83-6e573402904a","name":"Business
+        card, 85.0 × 50.0 mm, cyan / magenta / yellow / black","state":"completed","kind":"business_card","references":["JO/VTD2KG","JO/Z7SBAH"],"source":"2775","version":null,"due_at":"2016-11-02T16:00:00.000Z","quantity":200,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:20.998Z","updated_at":"2023-04-04T07:08:36.535Z","estimated_completed_at":"2016-11-06T23:51:07.000Z"},{"id":"674ee2f6-d495-4846-af3a-9ad9115eecc5","name":"Sheet,
+        680.0 × 480.0 mm, cyan / magenta / yellow / black","state":"completed","kind":"sheet","references":["JO/NX1WAC","JO/AK77AS"],"source":"2207","version":null,"due_at":"2016-11-02T12:00:00.000Z","quantity":1289,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:13.383Z","updated_at":"2023-04-04T07:08:23.133Z","estimated_completed_at":"2018-02-07T11:52:23.000Z"},{"id":"a78299c2-a673-401a-8e5a-eced6ac9a29d","name":"Brochure,
+        297.0 × 420.0 mm, cyan / magenta / yellow / black","state":"completed","kind":"brochure","references":["JO/WFCQKP","JO/GTCB33"],"source":"2317","version":null,"due_at":null,"quantity":350,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:14.259Z","updated_at":"2023-04-04T07:08:24.717Z","estimated_completed_at":"2017-04-20T10:05:48.000Z"},{"id":"e3b0b7b5-caed-44ed-8df7-70d41069c8ce","name":"Sheet,
+        240.0 × 140.0 mm, cyan / magenta / yellow / black","state":"completed","kind":"sheet","references":["JO/NCBAM6","JO/BFXKB9"],"source":"2249","version":null,"due_at":"2016-11-14T16:00:00.000Z","quantity":3500,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:13.711Z","updated_at":"2023-04-04T07:08:23.710Z","estimated_completed_at":"2018-02-07T11:54:16.000Z"},{"id":"4dcaff56-603e-431e-98d1-54e299943b82","name":"Sheet,
+        148.0 × 210.0 mm, cyan / magenta / yellow / black","state":"completed","kind":"sheet","references":["JO/GFRE1B","JO/VQ6PUD"],"source":"2275","version":null,"due_at":"2016-11-28T16:00:00.000Z","quantity":800,"acceptable_quantity_excess":0,"acceptable_quantity_underrun":0,"owner_id":"9d6ba13f-7d3b-4f28-b3e3-bdb18c8a2668","created_at":"2023-04-04T07:08:13.993Z","updated_at":"2023-04-04T07:08:24.282Z","estimated_completed_at":"2017-05-09T09:20:45.000Z"}]'
+  recorded_at: Tue, 04 Apr 2023 07:38:42 GMT
+recorded_with: VCR 6.1.0
