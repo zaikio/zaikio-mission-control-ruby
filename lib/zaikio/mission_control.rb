@@ -76,6 +76,15 @@ require "zaikio/mission_control/finishings/spiral_binding"
 require "zaikio/mission_control/finishings/strip_binding"
 require "zaikio/mission_control/finishings/thread_sewing"
 
+# Models
+require "zaikio/mission_control/job"
+require "zaikio/mission_control/part"
+require "zaikio/mission_control/color"
+require "zaikio/mission_control/desired_substrate"
+require "zaikio/mission_control/finishing_application"
+require "zaikio/mission_control/finishing"
+require "zaikio/mission_control/file_reference"
+
 module Zaikio
   module MissionControl
     class << self
