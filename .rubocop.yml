@@ -28,7 +28,7 @@ Style/Documentation:
   Enabled: false
 
 Style/FrozenStringLiteralComment:
-  EnforcedStyle: never
+  EnforcedStyle: always
 
 Style/StringLiterals:
   Enabled: true

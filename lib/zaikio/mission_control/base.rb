@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Zaikio
   module MissionControl
     class Base < Zaikio::Client::Model

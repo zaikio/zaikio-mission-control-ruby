@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "faraday"
 require "spyke"
 require "zaikio-client-helpers"
