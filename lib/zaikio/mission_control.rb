@@ -84,6 +84,9 @@ require "zaikio/mission_control/desired_substrate"
 require "zaikio/mission_control/finishing_application"
 require "zaikio/mission_control/finishing"
 require "zaikio/mission_control/file_reference"
+require "zaikio/mission_control/machine"
+require "zaikio/mission_control/specialist"
+require "zaikio/mission_control/availability"
 
 module Zaikio
   module MissionControl
