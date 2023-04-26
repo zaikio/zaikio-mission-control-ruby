@@ -7,9 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Remove availabilities for machines and specialists (will be moved to the hub)
+
 ## [0.2.4]
 
-- Add availabilities for machines and specifications
+- Add availabilities for machines and specialists
 
 ## [0.2.3]
 
