@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Add `Machine` and `Slot` resources, basic api retrieval for `Machine` production_schedule
 - Remove availabilities for machines and specialists (will be moved to the hub)
 
 ## [0.2.4]
