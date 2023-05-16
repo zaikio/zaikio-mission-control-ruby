@@ -192,4 +192,17 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
       end
     end
   end
+
+  test "fetch a machine production schedules" do
+    VCR.use_cassette("machine_production_schedule") do
+      Zaikio::MissionControl.with_token(token) do
+        slots = Zaikio::MissionControl::Machine
+                .new(id: "b1cc3531-ea11-4f94-b35f-cccaaed4a4c5")
+                .production_schedule_slots
+
+        assert_equal 3, slots.count
+        assert(slots.all? { |slot| slot.is_a?(Zaikio::MissionControl::Slot) })
+      end
+    end
+  end
 end
