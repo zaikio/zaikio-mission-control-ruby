@@ -86,6 +86,7 @@ require "zaikio/mission_control/finishing"
 require "zaikio/mission_control/file_reference"
 require "zaikio/mission_control/machine"
 require "zaikio/mission_control/slot"
+require "zaikio/mission_control/production_frame"
 
 module Zaikio
   module MissionControl
