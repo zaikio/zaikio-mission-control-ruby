@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Add `ProductionFrame` resource & basic api retrieval
+
 ## [0.2.5]
 
 - Add `Machine` and `Slot` resources, basic api retrieval for `Machine` production_schedule

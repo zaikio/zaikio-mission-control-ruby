@@ -205,4 +205,14 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
       end
     end
   end
+
+  test "fetch a production frame" do
+    VCR.use_cassette("production_frame") do
+      Zaikio::MissionControl.with_token(token) do
+        production_frame = Zaikio::MissionControl::ProductionFrame.find("254e44c4-067a-455f-8d1f-e75c6b936b2f")
+        assert_equal "254e44c4-067a-455f-8d1f-e75c6b936b2f", production_frame.id
+        assert_equal 1, production_frame.slots.count
+      end
+    end
+  end
 end
