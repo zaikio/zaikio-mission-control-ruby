@@ -184,6 +184,15 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
     end
   end
 
+  test "fetching an execution" do
+    VCR.use_cassette("execution") do
+      Zaikio::MissionControl.with_token(token) do
+        execution = Zaikio::MissionControl::Execution.find("b1cc3531-ea11-4f94-b35f-cccaaed4a4c5")
+        assert_equal "b1cc3531-ea11-4f94-b35f-cccaaed4a4c5", execution.id
+      end
+    end
+  end
+
   test "fetch a specific job" do
     VCR.use_cassette("job") do
       Zaikio::MissionControl.with_token(token) do

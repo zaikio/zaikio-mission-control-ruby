@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://mc.zaikio.test/api/v1/executions/b1cc3531-ea11-4f94-b35f-cccaaed4a4c5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.3
+      Authorization:
+      - Bearer eyJraWQiOiI0ZmZhNTc5MmQwMTJlMjY0YTEzODk5ZmZkYTA3YmVhYzkwOTA4NjRhNmY4MWU5YjQxMGNkOTFkY2UxOTNlODg3IiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJaQUkiLCJzdWIiOiJPcmdhbml6YXRpb24vOWQ2YmExM2YtN2QzYi00ZjI4LWIzZTMtYmRiMThjOGEyNjY4IiwiYXVkIjpbImtleWxpbmVfY2xhc3NpYyJdLCJqdGkiOiI4ZTBiOTI0MC1mNTdjLTQ4MjMtYTlmMi1lYjZkMzhkZGNiYmQiLCJuYmYiOjE2ODA1OTM5MDMsImV4cCI6MTY4MDU5NzUwMywiamt1IjoiaHR0cHM6Ly9odWIuc2FuZGJveC56YWlraW8uY29tL2FwaS92MS9qd3RfcHVibGljX2tleXMiLCJzY29wZSI6WyJkaXJlY3RvcnkubWFjaGluZXMucnciLCJkaXJlY3Rvcnkub3JnYW5pemF0aW9uLnIiLCJkaXJlY3Rvcnkub3JnYW5pemF0aW9uX21lbWJlcnMucnciLCJkaXJlY3Rvcnkuc2l0ZXMucnciLCJkaXJlY3Rvcnkuc3BlY2lhbGlzdHMucnciLCJtaXNzaW9uX2NvbnRyb2wuY29tbWlzc2lvbmluZ3MucnciLCJtaXNzaW9uX2NvbnRyb2wuZXN0aW1hdGVzLnJ3IiwibWlzc2lvbl9jb250cm9sLmpvYnMucnciLCJtaXNzaW9uX2NvbnRyb2wubGlzdHMucnciLCJtaXNzaW9uX2NvbnRyb2wub3JkZXJzLnJ3IiwicHJvY3VyZW1lbnRfY29uc3VtZXIuYXJ0aWNsZV9iYXNlLnIiLCJwcm9jdXJlbWVudF9jb25zdW1lci5jb250cmFjdHMucnciLCJwcm9jdXJlbWVudF9jb25zdW1lci5tYXRlcmlhbF9yZXF1aXJlbWVudHMucnciLCJwcm9jdXJlbWVudF9jb25zdW1lci5vcmRlcnMucnciLCJ3YXJlaG91c2UuY29uc3VtcHRpb25zX2FuZF9yZXNlcnZhdGlvbnMucnciLCJ3YXJlaG91c2UuZmluaXNoZWRfZ29vZHNfY2FsbF9vZmZzLnIiLCJ3YXJlaG91c2Uuc3RvY2tfbGV2ZWxzLnJ3Iiwid2FyZWhvdXNlLndhcmVob3VzZXMucnciXX0.vyJ1Q8UsYbNTBIalGxYcTao6CdqTjwPvAsdw8P3A84XGJeggeyMjiPbqioOr6AXhwpFjqrcjYw2xms69RTIDT_EYs6_0JzJQMujtuq04hqIPx2oOphMKCgjcoVkSjsnl--lW_qZj-FCVbcXoV9KQmVm7cfQK6pzA6k-1Qf_3ln-mvN32nOE7JPO6fDl_yebUpfvOKlgultLxxDtM8nHhiArpCvp5StZlFUVjUUhb_qI6uX58Z9Wk3j-7WrOdjtvtaN0CrknKV8GPWQNJMlWrF1uqA3t5X-KWRi5NyzeqgRZQ_t5Wcig_uMbrIn5cPt4dUdiaceQdzfzGm9wON00MhA
+      Accept-Language:
+      - en
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 04 Apr 2023 07:40:11 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"0f5d5a482ba6f6631cd61c5044991357"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ca25b7dc-057c-45d7-8008-ba3d23003b2a
+      X-Runtime:
+      - '0.295747'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Origin
+      Content-Length:
+      - '2023'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":"b1cc3531-ea11-4f94-b35f-cccaaed4a4c5","operator_id":"8d32563c-da57-49d6-88f7-3ae24a233b8b","machine_id":"91f3bb72-f245-46d8-b12f-405650281070","workstep_id":"2691f065-ed86-44ff-9377-005e233047d6","quantity":1,"waste":1,"started_at":"2023-08-21T12:52:20.423Z","ended_at":null,"phase":"execution","created_at":"2023-08-21T12:52:20.423Z","updated_at":"2023-08-21T12:52:20.423Z"}'
+  recorded_at: Tue, 04 Apr 2023 07:40:13 GMT
+recorded_with: VCR 6.1.0
