@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Add `Execution` resource
+
 ## [0.2.6]
 
 - Add `ProductionFrame` resource & basic api retrieval
