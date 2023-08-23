@@ -5,7 +5,7 @@ module Zaikio
                  :confirmed_at, :canceled_at, :fulfilled_at, :created_at, :updated_at
 
       # Associations
-      has_many :line_items, class_name: "Zaikio::MissionControl::LineItem", uri: nil
+      has_many :line_items, class_name: "Zaikio::MissionControl::OrderLineItem", uri: nil
     end
   end
 end
