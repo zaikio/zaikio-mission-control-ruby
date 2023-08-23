@@ -1,0 +1,65 @@
+---
+http_interactions:
+  - request:
+      method: get
+      uri: https://mc.zaikio.test/api/v1/orders/b1cc3531-ea11-4f94-b35f-cccaaed4a4c5
+      body:
+        encoding: US-ASCII
+        string: ''
+      headers:
+        User-Agent:
+          - Faraday v1.10.3
+        Authorization:
+          - Bearer eyJraWQiOiI0ZmZhNTc5MmQwMTJlMjY0YTEzODk5ZmZkYTA3YmVhYzkwOTA4NjRhNmY4MWU5YjQxMGNkOTFkY2UxOTNlODg3IiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJaQUkiLCJzdWIiOiJPcmdhbml6YXRpb24vOWQ2YmExM2YtN2QzYi00ZjI4LWIzZTMtYmRiMThjOGEyNjY4IiwiYXVkIjpbImtleWxpbmVfY2xhc3NpYyJdLCJqdGkiOiI4ZTBiOTI0MC1mNTdjLTQ4MjMtYTlmMi1lYjZkMzhkZGNiYmQiLCJuYmYiOjE2ODA1OTM5MDMsImV4cCI6MTY4MDU5NzUwMywiamt1IjoiaHR0cHM6Ly9odWIuc2FuZGJveC56YWlraW8uY29tL2FwaS92MS9qd3RfcHVibGljX2tleXMiLCJzY29wZSI6WyJkaXJlY3RvcnkubWFjaGluZXMucnciLCJkaXJlY3Rvcnkub3JnYW5pemF0aW9uLnIiLCJkaXJlY3Rvcnkub3JnYW5pemF0aW9uX21lbWJlcnMucnciLCJkaXJlY3Rvcnkuc2l0ZXMucnciLCJkaXJlY3Rvcnkuc3BlY2lhbGlzdHMucnciLCJtaXNzaW9uX2NvbnRyb2wuY29tbWlzc2lvbmluZ3MucnciLCJtaXNzaW9uX2NvbnRyb2wuZXN0aW1hdGVzLnJ3IiwibWlzc2lvbl9jb250cm9sLmpvYnMucnciLCJtaXNzaW9uX2NvbnRyb2wubGlzdHMucnciLCJtaXNzaW9uX2NvbnRyb2wub3JkZXJzLnJ3IiwicHJvY3VyZW1lbnRfY29uc3VtZXIuYXJ0aWNsZV9iYXNlLnIiLCJwcm9jdXJlbWVudF9jb25zdW1lci5jb250cmFjdHMucnciLCJwcm9jdXJlbWVudF9jb25zdW1lci5tYXRlcmlhbF9yZXF1aXJlbWVudHMucnciLCJwcm9jdXJlbWVudF9jb25zdW1lci5vcmRlcnMucnciLCJ3YXJlaG91c2UuY29uc3VtcHRpb25zX2FuZF9yZXNlcnZhdGlvbnMucnciLCJ3YXJlaG91c2UuZmluaXNoZWRfZ29vZHNfY2FsbF9vZmZzLnIiLCJ3YXJlaG91c2Uuc3RvY2tfbGV2ZWxzLnJ3Iiwid2FyZWhvdXNlLndhcmVob3VzZXMucnciXX0.vyJ1Q8UsYbNTBIalGxYcTao6CdqTjwPvAsdw8P3A84XGJeggeyMjiPbqioOr6AXhwpFjqrcjYw2xms69RTIDT_EYs6_0JzJQMujtuq04hqIPx2oOphMKCgjcoVkSjsnl--lW_qZj-FCVbcXoV9KQmVm7cfQK6pzA6k-1Qf_3ln-mvN32nOE7JPO6fDl_yebUpfvOKlgultLxxDtM8nHhiArpCvp5StZlFUVjUUhb_qI6uX58Z9Wk3j-7WrOdjtvtaN0CrknKV8GPWQNJMlWrF1uqA3t5X-KWRi5NyzeqgRZQ_t5Wcig_uMbrIn5cPt4dUdiaceQdzfzGm9wON00MhA
+        Accept-Language:
+          - en
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Server:
+          - Cowboy
+        Date:
+          - Tue, 04 Apr 2023 07:40:11 GMT
+        Connection:
+          - keep-alive
+        X-Frame-Options:
+          - SAMEORIGIN
+        X-Xss-Protection:
+          - '0'
+        X-Content-Type-Options:
+          - nosniff
+        X-Download-Options:
+          - noopen
+        X-Permitted-Cross-Domain-Policies:
+          - none
+        Referrer-Policy:
+          - strict-origin-when-cross-origin
+        Content-Type:
+          - application/json; charset=utf-8
+        Etag:
+          - W/"0f5d5a482ba6f6631cd61c5044991357"
+        Cache-Control:
+          - max-age=0, private, must-revalidate
+        X-Request-Id:
+          - ca25b7dc-057c-45d7-8008-ba3d23003b2a
+        X-Runtime:
+          - '0.295747'
+        Strict-Transport-Security:
+          - max-age=63072000; includeSubDomains
+        Vary:
+          - Origin
+        Content-Length:
+          - '2023'
+        Via:
+          - 1.1 vegur
+      body:
+        encoding: UTF-8
+        string: '{"id":"b1cc3531-ea11-4f94-b35f-cccaaed4a4c5","state":"draft","references":["OR/W7F13Q"],"currency":"USD","net_total":11336677,"gross_total":13490646,"taxes":2153969,"confirmed_at":null,"canceled_at":null,"fulfilled_at":null,"created_at":"2023-08-23T07:59:28.299Z","updated_at":"2023-08-23T07:59:28.299Z","line_items":[{"id":"8f544f65-084a-4af7-bccc-ba857af2a0fd","references":["OLI/CQ41TB","OLI/XVXDMK"],"kind":"product","job_id":"60906bf8-3774-4c1d-ad25-d3c54e119c8a","quantity":8289,"unit":"meter","description":null,"net_price":693,"net_total_price":5744277,"gross_price":825,"gross_total_price":6835690,"order_number":"28/Whiskey","taxes":1091413,"tax_rate":"0.19","created_at":"2023-08-23T07:59:28.311Z","updated_at":"2023-08-23T07:59:28.311Z","shipping_option_id":null},{"id":"738018ff-242b-478f-8a65-318dfd8a11d8","references":["OLI/1G68G6"],"kind":"shipping","job_id":null,"quantity":8200,"unit":null,"description":null,"net_price":682,"net_total_price":5592400,"gross_price":812,"gross_total_price":6654956,"order_number":"63/Yankee","taxes":1062556,"tax_rate":"0.19","created_at":"2023-08-23T07:59:28.313Z","updated_at":"2023-08-23T07:59:28.313Z","shipping_option_id":null}],"payment_terms":{"id":"5edcbdb0-ff2d-4b74-ac33-b841a09cb014","means_of_payment":"wire_transfer","means_of_payment_hint":"GB19XPLM15599874909048","mode":"prepaid","cash_discount":null,"cash_discount_timeframe":null,"due_at":null,"paid_at":null,"created_at":"2023-08-23T07:59:28.301Z","updated_at":"2023-08-23T07:59:28.301Z"},"address":{"id":"e5971100-d2b9-4ab2-8893-5a361f08dfb4","kind":"billing","addressee":"Athena S.A.R.L.","street":"Emmerich-Josef-Straße 1A  (mocked from Toolkit gem)","number":null,"zip_code":"55116","town":"Mainz","country_code":"DE","state":null,"addition":null,"location":[null,null],"created_at":"2023-08-23T07:59:28.300Z","updated_at":"2023-08-23T07:59:28.300Z"},"customer":{"id":"b1c203bd-45ff-4971-a4b4-0b5c738a41a1","name":"Green, Kemmer and Parker","text_identifier":"Green, Kemmer and Parker","references":["CU/T9NWXN","CU/wvoo1az"],"created_at":"2023-08-23T07:59:28.300Z","updated_at":"2023-08-23T07:59:28.300Z"},"contacts":[{"id":"58685b7b-a41a-4d28-a6e0-c38206b6adbc","display_name":"Jake Langosh 1","role":"consultant","email":"homer_hayes@bogisich.test","phone":"+372 (174) 169-1425","created_at":"2023-08-23T07:59:28.314Z","updated_at":"2023-08-23T07:59:28.314Z"},{"id":"3b1e6b46-2b90-4cd1-a76b-e7c0508325b0","display_name":"Pablo Nicolas 2","role":"consultant","email":"laurinda@wolf-runolfsdottir.test","phone":"+51 829-193-9184","created_at":"2023-08-23T07:59:28.315Z","updated_at":"2023-08-23T07:59:28.315Z"}],"links":[],"shipping_options":[]}'
+    recorded_at: Tue, 04 Apr 2023 07:40:13 GMT
+recorded_with: VCR 6.1.0

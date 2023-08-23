@@ -215,6 +215,20 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
     end
   end
 
+  test "fetch an order" do
+    VCR.use_cassette("order") do
+      Zaikio::MissionControl.with_token(token) do
+        order = Zaikio::MissionControl::Order.find("b1cc3531-ea11-4f94-b35f-cccaaed4a4c5")
+        assert_equal "b1cc3531-ea11-4f94-b35f-cccaaed4a4c5", order.id
+
+        line_items = order.line_items
+
+        assert_equal 2, line_items.count
+        assert(line_items.all? { |line_item| line_item.is_a?(Zaikio::MissionControl::OrderLineItem) })
+      end
+    end
+  end
+
   test "fetch a production frame" do
     VCR.use_cassette("production_frame") do
       Zaikio::MissionControl.with_token(token) do
