@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.9]
+
+- Add `ShippingOption` resource and association to `Order`
+
 ## [0.2.8]
 
 - Add `Order` and `LineItem` resource
@@ -50,7 +54,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add finishings specification
 - Add jobs and parts specification
 
-[Unreleased]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.2.8..HEAD
+[Unreleased]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.2.9..HEAD
+[0.2.9]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.2.8..v0.2.9
 [0.2.8]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.2.7..v0.2.8
 [0.2.7]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.2.6..v0.2.7
 [0.2.6]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.2.5..v0.2.6
