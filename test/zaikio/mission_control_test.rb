@@ -222,9 +222,16 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
         assert_equal "b1cc3531-ea11-4f94-b35f-cccaaed4a4c5", order.id
 
         line_items = order.line_items
+        shipping_options = order.shipping_options
+
+        assert_equal 1, shipping_options.count
 
         assert_equal 2, line_items.count
-        assert(line_items.all? { |line_item| line_item.is_a?(Zaikio::MissionControl::OrderLineItem) })
+        line_items.each do |line_item|
+          assert line_item.is_a?(Zaikio::MissionControl::OrderLineItem)
+          assert_equal line_item.shipping_option_id, shipping_options.first.id
+        end
+        assert_not shipping_options.first["address"].empty?
       end
     end
   end
