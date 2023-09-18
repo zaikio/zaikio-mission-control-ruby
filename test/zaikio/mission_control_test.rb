@@ -226,12 +226,20 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
 
         assert_equal 1, shipping_options.count
 
+        # Line Items
         assert_equal 2, line_items.count
         line_items.each do |line_item|
           assert line_item.is_a?(Zaikio::MissionControl::OrderLineItem)
           assert_equal line_item.shipping_option_id, shipping_options.first.id
         end
         assert_not shipping_options.first["address"].empty?
+
+        # Customer
+        assert_equal order.customer.name, "Collier-Mitchell"
+
+        # Contacts
+        assert_equal order.contacts.count, 2
+        assert_equal order.contacts.first.display_name, "Luana Reinger 1"
       end
     end
   end
