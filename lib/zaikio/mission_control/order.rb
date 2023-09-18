@@ -7,6 +7,8 @@ module Zaikio
       # Associations
       has_many :line_items, class_name: "Zaikio::MissionControl::OrderLineItem", uri: nil
       has_many :shipping_options, class_name: "Zaikio::MissionControl::ShippingOption", uri: nil
+      has_many :contacts, class_name: "Zaikio::MissionControl::Contact", uri: nil
+      has_one :customer, class_name: "Zaikio::MissionControl::Customer", uri: nil
     end
   end
 end

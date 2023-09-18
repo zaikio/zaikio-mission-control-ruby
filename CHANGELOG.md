@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Add `Contact` and `Customer` models and related associations to `Order`
+
 ## [0.2.11]
 
 - Include root in JSON payload for `OrderLineItem`
