@@ -2,7 +2,7 @@
 http_interactions:
   - request:
       method: get
-      uri: https://mc.zaikio.test/api/v1/production_frames/254e44c4-067a-455f-8d1f-e75c6b936b2f
+      uri: https://data.zaikio.test/api/v1/production_frames/254e44c4-067a-455f-8d1f-e75c6b936b2f
       body:
         encoding: US-ASCII
         string: ''
