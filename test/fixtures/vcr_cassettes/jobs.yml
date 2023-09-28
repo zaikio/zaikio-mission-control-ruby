@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://mc.zaikio.test/api/v1/jobs
+    uri: https://data.zaikio.test/api/v1/jobs
     body:
       encoding: US-ASCII
       string: ''
@@ -41,8 +41,8 @@ http_interactions:
       Referrer-Policy:
       - strict-origin-when-cross-origin
       Link:
-      - <https://mc.zaikio.test/api/v1/jobs?page=1&per_page=100>; rel="first",
-        <https://mc.zaikio.test/api/v1/jobs?page=1&per_page=100>; rel="last"
+      - <https://data.zaikio.test/api/v1/jobs?page=1&per_page=100>; rel="first",
+        <https://data.zaikio.test/api/v1/jobs?page=1&per_page=100>; rel="last"
       Current-Page:
       - '1'
       Total-Pages:

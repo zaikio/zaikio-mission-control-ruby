@@ -2,7 +2,7 @@
 http_interactions:
   - request:
       method: get
-      uri: https://mc.zaikio.test/api/v1/machines/b1cc3531-ea11-4f94-b35f-cccaaed4a4c5/production_schedule
+      uri: https://data.zaikio.test/api/v1/machines/b1cc3531-ea11-4f94-b35f-cccaaed4a4c5/production_schedule
       body:
         encoding: US-ASCII
         string: ''
