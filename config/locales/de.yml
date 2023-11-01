@@ -13,7 +13,7 @@ de:
       "zaikio/mission_control/jobs/cover_letter": "Anschreiben"
       "zaikio/mission_control/jobs/envelope": "Briefhülle"
       "zaikio/mission_control/jobs/flyer": "Flugblatt-Faltblatt"
-      "zaikio/mission_control/jobs/hardcover_book": "Hardcover-Buch"
+      "zaikio/mission_control/jobs/hardcover_book": "Buch - Hardcover"
       "zaikio/mission_control/jobs/label": "Aufkleber"
       "zaikio/mission_control/jobs/leaflet": "Flugblatt"
       "zaikio/mission_control/jobs/letter_head": "Briefbogen"
@@ -26,7 +26,7 @@ de:
       "zaikio/mission_control/jobs/poster": "Poster"
       "zaikio/mission_control/jobs/self_mailer": "Self Mailer"
       "zaikio/mission_control/jobs/sheet": "Blatt"
-      "zaikio/mission_control/jobs/softcover_book": "Softcover-Buch"
+      "zaikio/mission_control/jobs/softcover_book": "Buch - Softcover"
       # Parts
       "zaikio/mission_control/parts/back": "Schlussblatt"
       "zaikio/mission_control/parts/base": "Boden"
