@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Add new `Folder` and `FoldingCard` Mission Control `Job` kinds.
+
 ## [0.3.0]
 
 - Change target endpoint from `mc` to `data` to adapt to platform change
