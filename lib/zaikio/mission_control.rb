@@ -76,6 +76,24 @@ require "zaikio/mission_control/finishings/spiral_binding"
 require "zaikio/mission_control/finishings/strip_binding"
 require "zaikio/mission_control/finishings/thread_sewing"
 
+# Worksteps
+require "zaikio/mission_control/worksteps/base"
+require "zaikio/mission_control/worksteps/ctp"
+require "zaikio/mission_control/worksteps/printing"
+require "zaikio/mission_control/worksteps/cutting"
+require "zaikio/mission_control/worksteps/folding"
+require "zaikio/mission_control/worksteps/thread_sewing"
+require "zaikio/mission_control/worksteps/lamination"
+
+# Intermediate products
+require "zaikio/mission_control/intermediate_product/base"
+require "zaikio/mission_control/intermediate_product/plate"
+require "zaikio/mission_control/intermediate_product/sheet"
+require "zaikio/mission_control/intermediate_product/fold"
+require "zaikio/mission_control/intermediate_product/product"
+require "zaikio/mission_control/intermediate_product/book_block"
+require "zaikio/mission_control/intermediate_product/laminated_sheet"
+
 # Models
 require "zaikio/mission_control/job"
 require "zaikio/mission_control/part"
@@ -138,6 +156,13 @@ module Zaikio
                                .select { |c| c.is_a?(Class) } - [Zaikio::MissionControl::Finishings::Base]
       end
 
+      def workstep_klasses
+        @workstep_klasses ||= Zaikio::MissionControl::Worksteps
+                              .constants.sort
+                              .map { |c| Zaikio::MissionControl::Worksteps.const_get(c) }
+                              .select { |c| c.is_a?(Class) } - [Zaikio::MissionControl::Worksteps::Base]
+      end
+
       def jobs
         @jobs ||= job_klasses.map { |k| k.name.demodulize.underscore.to_sym }
       end
@@ -148,6 +173,14 @@ module Zaikio
 
       def finishings
         @finishings ||= finishing_klasses.map { |k| k.name.demodulize.underscore.to_sym }
+      end
+
+      def worksteps
+        @worksteps ||= workstep_klasses.map { |k| k.name.demodulize.underscore.to_sym }
+      end
+
+      (Zaikio::MissionControl::Jobs.constants  - [:Base]).each do |klass|
+        Zaikio.const_set(klass, Zaikio::MissionControl::Jobs.const_get(klass))
       end
     end
   end
