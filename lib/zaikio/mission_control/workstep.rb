@@ -1,6 +1,8 @@
 module Zaikio
   module MissionControl
     class Workstep < Base
+      include_root_in_json :workstep
+
       uri "worksteps(/:id)"
 
       attributes :kind, :state, :progress, :expected_costs_for_work, :actual_costs_for_work,
@@ -13,6 +15,20 @@ module Zaikio
 
       # Associations
       has_many :executions, class_name: "Zaikio::MissionControl::Execution", uri: "worksteps/:workstep_id/executions"
+
+      # TODO: change it to return a +Spyke+ +HasMany+ association
+      def created_intermediates
+        @created_intermediates ||= self["intermediates"]["created"].map do |slot|
+          Zaikio::MissionControl::IntermediateProduct.new(slot)
+        end
+      end
+
+      # TODO: change it to return a +Spyke+ +HasMany+ association
+      def consumed_intermediates
+        @consumed_intermediates ||= get(:workstep)["intermediates"]["consumed"].map do |slot|
+          Zaikio::MissionControl::IntermediateProduct.new(slot)
+        end
+      end
     end
   end
 end

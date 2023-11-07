@@ -25,7 +25,13 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Tue, 07 Nov 2023 13:23:28 GMT
+      - Tue, 07 Nov 2023 14:36:19 GMT
+      Report-To:
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1699367780&sid=812dcc77-0bd0-43b1-a5f1-b25750382959&s=sdlRjpwDMaLryxbxWzpplRWp9m2eNPjtMfq8XpseDPE%3D"}]}'
+      Reporting-Endpoints:
+      - heroku-nel=https://nel.heroku.com/reports?ts=1699367780&sid=812dcc77-0bd0-43b1-a5f1-b25750382959&s=sdlRjpwDMaLryxbxWzpplRWp9m2eNPjtMfq8XpseDPE%3D
+      Nel:
+      - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
       Connection:
       - keep-alive
       X-Frame-Options:
@@ -47,9 +53,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 224e55ca-36fd-4207-a011-572a2fb8edd7
+      - ab50d64d-f514-4425-bda1-6f089adfa5f8
       X-Runtime:
-      - '0.031975'
+      - '0.032213'
       Strict-Transport-Security:
       - max-age=63072000; includeSubDomains
       Vary:
@@ -61,7 +67,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"id":"2d6cc7cb-a7dd-4f99-958e-df49ae3f1ab3","kind":"cutting","state":"running","phase":"execution","outsourced":false,"grouping_id":null,"expected_costs_for_work":2424,"expected_costs_for_materials":null,"expected_total_costs":null,"expected_duration_for_preparation":0,"expected_duration_for_execution":0,"expected_duration_for_cleanup":0,"expected_total_duration":452,"actual_costs_for_work":null,"actual_costs_for_materials":null,"actual_total_costs":null,"actual_duration_for_preparation":0,"actual_duration_for_execution":425130,"actual_duration_for_cleanup":0,"actual_duration_for_exception":null,"actual_total_duration":425130,"created_at":"2023-05-26T13:25:40.673Z","updated_at":"2023-05-31T12:11:06.946Z","phases":[{"phase":"execution","expected_duration":null,"actual_duration":425130,"created_at":"2023-05-26T14:00:00.249Z","updated_at":"2023-05-31T12:11:06.937Z"}],"parts":[],"jobs":[],"slots":[],"intermediates":{"consumed":[],"created":[{"id":"38a4d74d-2641-4d93-ab34-d956e9dd5eed","kind":"sheet","completion_percentage":1.0,"consumption_percentage":0.0,"network":{"creating_workstep":"2d6cc7cb-a7dd-4f99-958e-df49ae3f1ab3","consuming_workstep":"e8e66539-5ed0-42dd-83ba-662a22289e17"},"quantity":{"expected":500,"actual":500},"waste":{"allowed":0,"actual":0}},{"id":"f6012fde-3a94-41e7-b2ed-73dedfb0386d","kind":"sheet","completion_percentage":1.0,"consumption_percentage":0.0,"network":{"creating_workstep":"2d6cc7cb-a7dd-4f99-958e-df49ae3f1ab3","consuming_workstep":"e8e66539-5ed0-42dd-83ba-662a22289e17"},"quantity":{"expected":500,"actual":500},"waste":{"allowed":0,"actual":0}},{"id":"7c0a8061-8662-4fdd-9fad-d8c1460403be","kind":"sheet","completion_percentage":1.0,"consumption_percentage":0.0,"network":{"creating_workstep":"2d6cc7cb-a7dd-4f99-958e-df49ae3f1ab3","consuming_workstep":"e8e66539-5ed0-42dd-83ba-662a22289e17"},"quantity":{"expected":500,"actual":500},"waste":{"allowed":0,"actual":0}}]}}'
-  recorded_at: Tue, 07 Nov 2023 13:23:28 GMT
+  recorded_at: Tue, 07 Nov 2023 14:36:20 GMT
 - request:
     method: get
     uri: https://data.sandbox.zaikio.com/api/v1/worksteps/2d6cc7cb-a7dd-4f99-958e-df49ae3f1ab3/executions
@@ -87,11 +93,11 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Tue, 07 Nov 2023 13:23:28 GMT
+      - Tue, 07 Nov 2023 14:36:20 GMT
       Report-To:
-      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1699363408&sid=812dcc77-0bd0-43b1-a5f1-b25750382959&s=JyRZ2ZbdUWCZVwUPwswiMIO48XYVRQYpxf4sX5PrrWs%3D"}]}'
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1699367780&sid=812dcc77-0bd0-43b1-a5f1-b25750382959&s=sdlRjpwDMaLryxbxWzpplRWp9m2eNPjtMfq8XpseDPE%3D"}]}'
       Reporting-Endpoints:
-      - heroku-nel=https://nel.heroku.com/reports?ts=1699363408&sid=812dcc77-0bd0-43b1-a5f1-b25750382959&s=JyRZ2ZbdUWCZVwUPwswiMIO48XYVRQYpxf4sX5PrrWs%3D
+      - heroku-nel=https://nel.heroku.com/reports?ts=1699367780&sid=812dcc77-0bd0-43b1-a5f1-b25750382959&s=sdlRjpwDMaLryxbxWzpplRWp9m2eNPjtMfq8XpseDPE%3D
       Nel:
       - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
       Connection:
@@ -125,9 +131,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 65d5138d-c04c-4d95-b1ee-3921bf5277fb
+      - dd0110c4-3c52-495b-ae8d-bd4e3a3d342f
       X-Runtime:
-      - '0.104344'
+      - '0.015890'
       Strict-Transport-Security:
       - max-age=63072000; includeSubDomains
       Vary:
@@ -139,5 +145,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '[{"id":"7ff2e44e-2ab0-40ed-bc5f-2714edb8a0e0","operator_id":"1a129f4a-b8ea-4d3a-a156-64d04827f2c0","machine_id":"36603f24-5388-4328-b3af-2671b27cda3c","workstep_id":"2d6cc7cb-a7dd-4f99-958e-df49ae3f1ab3","quantity":500,"waste":0,"started_at":"2023-05-26T14:05:36.000Z","ended_at":null,"phase":"execution","created_at":"2023-05-26T14:00:00.231Z","updated_at":"2023-05-26T14:14:00.183Z"}]'
-  recorded_at: Tue, 07 Nov 2023 13:23:28 GMT
-recorded_with: VCR 6.1.0
+  recorded_at: Tue, 07 Nov 2023 14:36:20 GMT
+recorded_with: VCR 6.2.0
