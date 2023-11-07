@@ -1,0 +1,217 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://data.sandbox.zaikio.com/api/v1/executions/7ff2e44e-2ab0-40ed-bc5f-2714edb8a0e0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.3
+      Authorization:
+      - Bearer eyJraWQiOiI0ZmZhNTc5MmQwMTJlMjY0YTEzODk5ZmZkYTA3YmVhYzkwOTA4NjRhNmY4MWU5YjQxMGNkOTFkY2UxOTNlODg3IiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJaQUkiLCJzdWIiOiJPcmdhbml6YXRpb24vOTVkNGI3ODYtZTdlNi00YmIzLWIyMjgtMjljODc0YWYyZjcyIiwiYXVkIjpbIk9yZ2FuaXphdGlvbi85NWQ0Yjc4Ni1lN2U2LTRiYjMtYjIyOC0yOWM4NzRhZjJmNzIiXSwianRpIjoiY2Q3NWIwNjktNzUxZC00ZmU2LTk1NzYtMDAwMjAwY2JkZmQyIiwibmJmIjoxNjk5MzczNTU0LCJleHAiOjE3MzA5OTU5NTQsImprdSI6Imh0dHBzOi8vaHViLnNhbmRib3guemFpa2lvLmNvbS9hcGkvdjEvand0X3B1YmxpY19rZXlzIiwic2NvcGUiOlsibWlzc2lvbl9jb250cm9sLmpvYnMucnciLCJtaXNzaW9uX2NvbnRyb2wucHJvZHVjdGlvbi5ydyJdfQ.kyzZsRQzEY_1EHrPNLEJLVnjml75w2sxMKb2fX-4N9TAtuiyNtAUrhu4gRrAmmfqsFkCFUPoMoMHH5pVLRgyYEBhDdAHBF9Y2oMZ-ZmOj4B0wG-GXO0rP4SHkdjxeOEFhPUmeAE2BYBhFLpbYXTKvH34d7ODysm_kvzVLVIXewc3dw5bkoBgS89cqwMGhe77eaTriSDxe0SO8IjKIym078ssBx2p8PSNAjKPImbsk6XRQWzcNdjKHuTymaw6uFvPVQTFq4CiJXT-m5dUKk1Lhge-JtdkvcGUoUGJyPFv3FpWXGwFy1AIeD6gUt3SJ8eyhsoTa-SyLZ4gBqC8Qi859A
+      Accept-Language:
+      - en
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 07 Nov 2023 16:13:18 GMT
+      Report-To:
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1699373598&sid=812dcc77-0bd0-43b1-a5f1-b25750382959&s=iQp%2B%2Bcke%2FsuAIuOATzsXEdy1uUvEupod1ej1cmTEAl4%3D"}]}'
+      Reporting-Endpoints:
+      - heroku-nel=https://nel.heroku.com/reports?ts=1699373598&sid=812dcc77-0bd0-43b1-a5f1-b25750382959&s=iQp%2B%2Bcke%2FsuAIuOATzsXEdy1uUvEupod1ej1cmTEAl4%3D
+      Nel:
+      - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2150e176eb20611229bf204c82aad6b5"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7871fd0a-80e9-4e86-a78f-8be3bab09869
+      X-Runtime:
+      - '0.072570'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Origin
+      Content-Length:
+      - '384'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":"7ff2e44e-2ab0-40ed-bc5f-2714edb8a0e0","operator_id":"1a129f4a-b8ea-4d3a-a156-64d04827f2c0","machine_id":"36603f24-5388-4328-b3af-2671b27cda3c","workstep_id":"2d6cc7cb-a7dd-4f99-958e-df49ae3f1ab3","quantity":500,"waste":0,"started_at":"2023-05-26T14:05:36.000Z","ended_at":null,"phase":"execution","created_at":"2023-05-26T14:00:00.231Z","updated_at":"2023-05-26T14:14:00.183Z"}'
+  recorded_at: Tue, 07 Nov 2023 16:13:18 GMT
+- request:
+    method: get
+    uri: https://data.sandbox.zaikio.com/api/v1/worksteps/2d6cc7cb-a7dd-4f99-958e-df49ae3f1ab3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.3
+      Authorization:
+      - Bearer eyJraWQiOiI0ZmZhNTc5MmQwMTJlMjY0YTEzODk5ZmZkYTA3YmVhYzkwOTA4NjRhNmY4MWU5YjQxMGNkOTFkY2UxOTNlODg3IiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJaQUkiLCJzdWIiOiJPcmdhbml6YXRpb24vOTVkNGI3ODYtZTdlNi00YmIzLWIyMjgtMjljODc0YWYyZjcyIiwiYXVkIjpbIk9yZ2FuaXphdGlvbi85NWQ0Yjc4Ni1lN2U2LTRiYjMtYjIyOC0yOWM4NzRhZjJmNzIiXSwianRpIjoiY2Q3NWIwNjktNzUxZC00ZmU2LTk1NzYtMDAwMjAwY2JkZmQyIiwibmJmIjoxNjk5MzczNTU0LCJleHAiOjE3MzA5OTU5NTQsImprdSI6Imh0dHBzOi8vaHViLnNhbmRib3guemFpa2lvLmNvbS9hcGkvdjEvand0X3B1YmxpY19rZXlzIiwic2NvcGUiOlsibWlzc2lvbl9jb250cm9sLmpvYnMucnciLCJtaXNzaW9uX2NvbnRyb2wucHJvZHVjdGlvbi5ydyJdfQ.kyzZsRQzEY_1EHrPNLEJLVnjml75w2sxMKb2fX-4N9TAtuiyNtAUrhu4gRrAmmfqsFkCFUPoMoMHH5pVLRgyYEBhDdAHBF9Y2oMZ-ZmOj4B0wG-GXO0rP4SHkdjxeOEFhPUmeAE2BYBhFLpbYXTKvH34d7ODysm_kvzVLVIXewc3dw5bkoBgS89cqwMGhe77eaTriSDxe0SO8IjKIym078ssBx2p8PSNAjKPImbsk6XRQWzcNdjKHuTymaw6uFvPVQTFq4CiJXT-m5dUKk1Lhge-JtdkvcGUoUGJyPFv3FpWXGwFy1AIeD6gUt3SJ8eyhsoTa-SyLZ4gBqC8Qi859A
+      Accept-Language:
+      - en
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 07 Nov 2023 16:13:18 GMT
+      Report-To:
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1699373598&sid=812dcc77-0bd0-43b1-a5f1-b25750382959&s=iQp%2B%2Bcke%2FsuAIuOATzsXEdy1uUvEupod1ej1cmTEAl4%3D"}]}'
+      Reporting-Endpoints:
+      - heroku-nel=https://nel.heroku.com/reports?ts=1699373598&sid=812dcc77-0bd0-43b1-a5f1-b25750382959&s=iQp%2B%2Bcke%2FsuAIuOATzsXEdy1uUvEupod1ej1cmTEAl4%3D
+      Nel:
+      - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"cfa79594102994ead79167f3cce9935e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - deba333c-fcb4-4d3d-a716-189991def450
+      X-Runtime:
+      - '0.143981'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Origin
+      Content-Length:
+      - '1923'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":"2d6cc7cb-a7dd-4f99-958e-df49ae3f1ab3","kind":"cutting","state":"running","phase":"execution","outsourced":false,"grouping_id":null,"expected_costs_for_work":2424,"expected_costs_for_materials":null,"expected_total_costs":null,"expected_duration_for_preparation":0,"expected_duration_for_execution":0,"expected_duration_for_cleanup":0,"expected_total_duration":452,"actual_costs_for_work":null,"actual_costs_for_materials":null,"actual_total_costs":null,"actual_duration_for_preparation":0,"actual_duration_for_execution":425130,"actual_duration_for_cleanup":0,"actual_duration_for_exception":null,"actual_total_duration":425130,"created_at":"2023-05-26T13:25:40.673Z","updated_at":"2023-05-31T12:11:06.946Z","phases":[{"phase":"execution","expected_duration":null,"actual_duration":425130,"created_at":"2023-05-26T14:00:00.249Z","updated_at":"2023-05-31T12:11:06.937Z"}],"parts":[],"jobs":[],"slots":[],"intermediates":{"consumed":[],"created":[{"id":"38a4d74d-2641-4d93-ab34-d956e9dd5eed","kind":"sheet","completion_percentage":1.0,"consumption_percentage":0.0,"network":{"creating_workstep":"2d6cc7cb-a7dd-4f99-958e-df49ae3f1ab3","consuming_workstep":"e8e66539-5ed0-42dd-83ba-662a22289e17"},"quantity":{"expected":500,"actual":500},"waste":{"allowed":0,"actual":0}},{"id":"f6012fde-3a94-41e7-b2ed-73dedfb0386d","kind":"sheet","completion_percentage":1.0,"consumption_percentage":0.0,"network":{"creating_workstep":"2d6cc7cb-a7dd-4f99-958e-df49ae3f1ab3","consuming_workstep":"e8e66539-5ed0-42dd-83ba-662a22289e17"},"quantity":{"expected":500,"actual":500},"waste":{"allowed":0,"actual":0}},{"id":"7c0a8061-8662-4fdd-9fad-d8c1460403be","kind":"sheet","completion_percentage":1.0,"consumption_percentage":0.0,"network":{"creating_workstep":"2d6cc7cb-a7dd-4f99-958e-df49ae3f1ab3","consuming_workstep":"e8e66539-5ed0-42dd-83ba-662a22289e17"},"quantity":{"expected":500,"actual":500},"waste":{"allowed":0,"actual":0}}]}}'
+  recorded_at: Tue, 07 Nov 2023 16:13:18 GMT
+- request:
+    method: get
+    uri: https://data.sandbox.zaikio.com/api/v1/worksteps/2d6cc7cb-a7dd-4f99-958e-df49ae3f1ab3/executions
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.3
+      Authorization:
+      - Bearer eyJraWQiOiI0ZmZhNTc5MmQwMTJlMjY0YTEzODk5ZmZkYTA3YmVhYzkwOTA4NjRhNmY4MWU5YjQxMGNkOTFkY2UxOTNlODg3IiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJaQUkiLCJzdWIiOiJPcmdhbml6YXRpb24vOTVkNGI3ODYtZTdlNi00YmIzLWIyMjgtMjljODc0YWYyZjcyIiwiYXVkIjpbIk9yZ2FuaXphdGlvbi85NWQ0Yjc4Ni1lN2U2LTRiYjMtYjIyOC0yOWM4NzRhZjJmNzIiXSwianRpIjoiY2Q3NWIwNjktNzUxZC00ZmU2LTk1NzYtMDAwMjAwY2JkZmQyIiwibmJmIjoxNjk5MzczNTU0LCJleHAiOjE3MzA5OTU5NTQsImprdSI6Imh0dHBzOi8vaHViLnNhbmRib3guemFpa2lvLmNvbS9hcGkvdjEvand0X3B1YmxpY19rZXlzIiwic2NvcGUiOlsibWlzc2lvbl9jb250cm9sLmpvYnMucnciLCJtaXNzaW9uX2NvbnRyb2wucHJvZHVjdGlvbi5ydyJdfQ.kyzZsRQzEY_1EHrPNLEJLVnjml75w2sxMKb2fX-4N9TAtuiyNtAUrhu4gRrAmmfqsFkCFUPoMoMHH5pVLRgyYEBhDdAHBF9Y2oMZ-ZmOj4B0wG-GXO0rP4SHkdjxeOEFhPUmeAE2BYBhFLpbYXTKvH34d7ODysm_kvzVLVIXewc3dw5bkoBgS89cqwMGhe77eaTriSDxe0SO8IjKIym078ssBx2p8PSNAjKPImbsk6XRQWzcNdjKHuTymaw6uFvPVQTFq4CiJXT-m5dUKk1Lhge-JtdkvcGUoUGJyPFv3FpWXGwFy1AIeD6gUt3SJ8eyhsoTa-SyLZ4gBqC8Qi859A
+      Accept-Language:
+      - en
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 07 Nov 2023 16:13:18 GMT
+      Report-To:
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1699373598&sid=812dcc77-0bd0-43b1-a5f1-b25750382959&s=iQp%2B%2Bcke%2FsuAIuOATzsXEdy1uUvEupod1ej1cmTEAl4%3D"}]}'
+      Reporting-Endpoints:
+      - heroku-nel=https://nel.heroku.com/reports?ts=1699373598&sid=812dcc77-0bd0-43b1-a5f1-b25750382959&s=iQp%2B%2Bcke%2FsuAIuOATzsXEdy1uUvEupod1ej1cmTEAl4%3D
+      Nel:
+      - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Link:
+      - <https://data.sandbox.zaikio.com/api/v1/worksteps/2d6cc7cb-a7dd-4f99-958e-df49ae3f1ab3/executions?page=1&per_page=100>;
+        rel="first", <https://data.sandbox.zaikio.com/api/v1/worksteps/2d6cc7cb-a7dd-4f99-958e-df49ae3f1ab3/executions?page=1&per_page=100>;
+        rel="last"
+      Current-Page:
+      - '1'
+      Total-Pages:
+      - '1'
+      Total-Count:
+      - '1'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f46b8457ad6e0b0f58a50f52ef522ac9"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 428fd4f9-6087-42b8-bd67-702d680742ff
+      X-Runtime:
+      - '0.027189'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Origin
+      Content-Length:
+      - '386'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":"7ff2e44e-2ab0-40ed-bc5f-2714edb8a0e0","operator_id":"1a129f4a-b8ea-4d3a-a156-64d04827f2c0","machine_id":"36603f24-5388-4328-b3af-2671b27cda3c","workstep_id":"2d6cc7cb-a7dd-4f99-958e-df49ae3f1ab3","quantity":500,"waste":0,"started_at":"2023-05-26T14:05:36.000Z","ended_at":null,"phase":"execution","created_at":"2023-05-26T14:00:00.231Z","updated_at":"2023-05-26T14:14:00.183Z"}]'
+  recorded_at: Tue, 07 Nov 2023 16:13:19 GMT
+recorded_with: VCR 6.1.0

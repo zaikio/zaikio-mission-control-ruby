@@ -265,6 +265,17 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
     end
   end
 
+  test "fetch a workstep from an execution" do
+    VCR.use_cassette("workstep_from_execution") do
+      Zaikio::MissionControl.with_token(token) do
+        execution = Zaikio::MissionControl::Execution.find("7ff2e44e-2ab0-40ed-bc5f-2714edb8a0e0")
+        workstep = execution.workstep
+        assert_equal "cutting", workstep.kind
+        assert_equal 1, workstep.executions.count
+      end
+    end
+  end
+
   test "fetch a production frame" do
     VCR.use_cassette("production_frame") do
       Zaikio::MissionControl.with_token(token) do
