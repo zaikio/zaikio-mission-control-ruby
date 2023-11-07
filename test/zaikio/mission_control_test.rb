@@ -244,6 +244,18 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
     end
   end
 
+  test "fetch a workstep" do
+    VCR.use_cassette("workstep") do
+      token = "eyJraWQiOiI0ZmZhNTc5MmQwMTJlMjY0YTEzODk5ZmZkYTA3YmVhYzkwOTA4NjRhNmY4MWU5YjQxMGNkOTFkY2UxOTNlODg3IiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJaQUkiLCJzdWIiOiJPcmdhbml6YXRpb24vOTVkNGI3ODYtZTdlNi00YmIzLWIyMjgtMjljODc0YWYyZjcyIiwiYXVkIjpbIk9yZ2FuaXphdGlvbi85NWQ0Yjc4Ni1lN2U2LTRiYjMtYjIyOC0yOWM4NzRhZjJmNzIiXSwianRpIjoiMDY5NGI4OWYtYjgzNC00YTc1LTg5ODQtYTkzNTlmZjk1Nzc0IiwibmJmIjoxNjk5MzYyODQ2LCJleHAiOjE3MzA5ODUyNDYsImprdSI6Imh0dHBzOi8vaHViLnNhbmRib3guemFpa2lvLmNvbS9hcGkvdjEvand0X3B1YmxpY19rZXlzIiwic2NvcGUiOlsibWlzc2lvbl9jb250cm9sLmpvYnMucnciLCJtaXNzaW9uX2NvbnRyb2wucHJvZHVjdGlvbi5ydyJdfQ.awDPiuRHd3g5Ovb4vYXBq_H_Tqkiocf7F-AT80Pw41lCiswpAf_ugVWKsYGBmlCBlEEwn2y7NW0iRbXGLJ7tm5hhfQR71FFV03D9HLUgh97UJXcpcOKrrb7AjYHH7SB2aOEF9bMvTrIBrrlvm1sKzYjHYBKCzkvQrDEXl3iq70jBY9qHlemdcqa8PPp6duC6PYA9ImcHjIlleK3W7cZ7593CVwBONC32C-wh-tYQVvydVCU1OoxRcFIVQ-UgyFfkeylysQVIGvyHUx3fxSs8p_DxV9e0NuDkR8rN7tOTpYEg8gN3h66MPMh2IzQ6CkFgXvBCVKIQsU4aL_Vi3YTgoQ"
+      Zaikio::MissionControl.with_token(token) do
+        workstep = Zaikio::MissionControl::Workstep.find("2d6cc7cb-a7dd-4f99-958e-df49ae3f1ab3")
+        assert_equal "cutting", workstep.kind
+        assert_equal 1, workstep.executions.count
+        assert_equal 425130, workstep.actual_duration_for_execution
+      end
+    end
+  end
+
   test "fetch a production frame" do
     VCR.use_cassette("production_frame") do
       Zaikio::MissionControl.with_token(token) do

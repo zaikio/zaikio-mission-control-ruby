@@ -93,6 +93,7 @@ require "zaikio/mission_control/order_line_item"
 require "zaikio/mission_control/shipping_option"
 require "zaikio/mission_control/slot"
 require "zaikio/mission_control/production_frame"
+require "zaikio/mission_control/workstep"
 
 module Zaikio
   module MissionControl
