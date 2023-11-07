@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://data.sandbox.zaikio.com/api/v1/intermediate_products/8119fd65-80ca-4e5c-b4cc-024086290f14
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.3
+      Authorization:
+      - Bearer eyJraWQiOiI0ZmZhNTc5MmQwMTJlMjY0YTEzODk5ZmZkYTA3YmVhYzkwOTA4NjRhNmY4MWU5YjQxMGNkOTFkY2UxOTNlODg3IiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJaQUkiLCJzdWIiOiJPcmdhbml6YXRpb24vOTVkNGI3ODYtZTdlNi00YmIzLWIyMjgtMjljODc0YWYyZjcyIiwiYXVkIjpbIk9yZ2FuaXphdGlvbi85NWQ0Yjc4Ni1lN2U2LTRiYjMtYjIyOC0yOWM4NzRhZjJmNzIiXSwianRpIjoiMDY5NGI4OWYtYjgzNC00YTc1LTg5ODQtYTkzNTlmZjk1Nzc0IiwibmJmIjoxNjk5MzYyODQ2LCJleHAiOjE3MzA5ODUyNDYsImprdSI6Imh0dHBzOi8vaHViLnNhbmRib3guemFpa2lvLmNvbS9hcGkvdjEvand0X3B1YmxpY19rZXlzIiwic2NvcGUiOlsibWlzc2lvbl9jb250cm9sLmpvYnMucnciLCJtaXNzaW9uX2NvbnRyb2wucHJvZHVjdGlvbi5ydyJdfQ.awDPiuRHd3g5Ovb4vYXBq_H_Tqkiocf7F-AT80Pw41lCiswpAf_ugVWKsYGBmlCBlEEwn2y7NW0iRbXGLJ7tm5hhfQR71FFV03D9HLUgh97UJXcpcOKrrb7AjYHH7SB2aOEF9bMvTrIBrrlvm1sKzYjHYBKCzkvQrDEXl3iq70jBY9qHlemdcqa8PPp6duC6PYA9ImcHjIlleK3W7cZ7593CVwBONC32C-wh-tYQVvydVCU1OoxRcFIVQ-UgyFfkeylysQVIGvyHUx3fxSs8p_DxV9e0NuDkR8rN7tOTpYEg8gN3h66MPMh2IzQ6CkFgXvBCVKIQsU4aL_Vi3YTgoQ
+      Accept-Language:
+      - en
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 07 Nov 2023 13:45:10 GMT
+      Report-To:
+      - '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1699364711&sid=812dcc77-0bd0-43b1-a5f1-b25750382959&s=ieeeDw%2F%2F53W98neCZQFN1zvrcVaP9%2F2oFLd7w%2FvYayE%3D"}]}'
+      Reporting-Endpoints:
+      - heroku-nel=https://nel.heroku.com/reports?ts=1699364711&sid=812dcc77-0bd0-43b1-a5f1-b25750382959&s=ieeeDw%2F%2F53W98neCZQFN1zvrcVaP9%2F2oFLd7w%2FvYayE%3D
+      Nel:
+      - '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}'
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b837122c73d1d106822f2bd9ef1f5bb7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 42198653-1797-4bfd-80b1-cd8c4bd27238
+      X-Runtime:
+      - '0.086551'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
+      Vary:
+      - Origin
+      Content-Length:
+      - '443'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":"8119fd65-80ca-4e5c-b4cc-024086290f14","kind":"sheet","expected_quantity":51,"expected_waste":0,"actual_quantity":0,"actual_waste":0,"completion_percentage":0.0,"consumption_percentage":0,"suspicious_quantities":false,"creating_workstep_id":"17c287e7-c577-4741-8927-db8d7449a661","consuming_workstep_id":"f734dd8e-650c-4437-afbe-67a1a2ffb0ee","created_at":"2023-05-12T08:33:42.335Z","updated_at":"2023-05-12T08:33:42.335Z","layout":null}'
+  recorded_at: Tue, 07 Nov 2023 13:45:11 GMT
+recorded_with: VCR 6.2.0
