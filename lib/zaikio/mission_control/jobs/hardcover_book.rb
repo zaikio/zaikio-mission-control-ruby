@@ -2,10 +2,12 @@ module Zaikio
   module MissionControl
     module Jobs
       class HardcoverBook < Base
-        has_many_parts :contents, required: true
-        has_one_part :case, required: true
-        has_many_parts :endpapers, required: true
-        has_one_part :jacket
+        @parts = {
+          case: { required: true, multiple: false },
+          content: { required: true, multiple: true },
+          endpaper: { required: true, multiple: true },
+          jacket: { required: false, multiple: false }
+        }
       end
     end
   end

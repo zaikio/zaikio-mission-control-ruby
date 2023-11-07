@@ -2,8 +2,10 @@ module Zaikio
   module MissionControl
     module Jobs
       class CartonTwoPiece < Base
-        has_one_part :base, required: true
-        has_one_part :lid, required: true
+        @parts = {
+          base: { required: true, multiple: false },
+          lid: { required: true, multiple: false }
+        }
       end
     end
   end

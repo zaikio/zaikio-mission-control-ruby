@@ -2,7 +2,7 @@ module Zaikio
   module MissionControl
     module Jobs
       class Leaflet < Base
-        has_one_part :leaflet, required: true
+        @parts = { leaflet: { required: true, multiple: false } }
       end
     end
   end

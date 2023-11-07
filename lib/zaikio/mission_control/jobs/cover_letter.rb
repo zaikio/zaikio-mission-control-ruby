@@ -2,7 +2,7 @@ module Zaikio
   module MissionControl
     module Jobs
       class CoverLetter < Base
-        has_one_part :cover_letter, required: true
+        @parts = { cover_letter: { required: true, multiple: false } }
       end
     end
   end

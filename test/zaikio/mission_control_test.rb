@@ -171,8 +171,8 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
   test "returns jobs and parts config" do
     assert_equal(
       %i[
-        content
         cover
+        content
         insert
         outsert
       ],
@@ -185,8 +185,8 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
     assert Zaikio::MissionControl::Jobs::Booklet.required?(Zaikio::MissionControl::Parts::Content)
     assert_equal(
       [
-        Zaikio::MissionControl::Parts::Content,
         Zaikio::MissionControl::Parts::Cover,
+        Zaikio::MissionControl::Parts::Content,
         Zaikio::MissionControl::Parts::Insert,
         Zaikio::MissionControl::Parts::Outsert
       ],

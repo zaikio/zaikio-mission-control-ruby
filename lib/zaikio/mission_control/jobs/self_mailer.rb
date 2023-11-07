@@ -2,7 +2,7 @@ module Zaikio
   module MissionControl
     module Jobs
       class SelfMailer < Base
-        has_one_part :self_mailer, required: true
+        @parts = { self_mailer: { required: true, multiple: false } }
       end
     end
   end

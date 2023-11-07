@@ -2,7 +2,7 @@ module Zaikio
   module MissionControl
     module Jobs
       class ContinuationSheet < Base
-        has_one_part :continuation_sheet, required: true
+        @parts = { continuation_sheet: { required: true, multiple: false } }
       end
     end
   end

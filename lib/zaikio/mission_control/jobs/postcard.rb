@@ -2,7 +2,7 @@ module Zaikio
   module MissionControl
     module Jobs
       class Postcard < Base
-        has_one_part :postcard, required: true
+        @parts = { postcard: { required: true, multiple: false } }
       end
     end
   end
