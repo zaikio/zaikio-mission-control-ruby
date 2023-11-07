@@ -244,6 +244,27 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
     end
   end
 
+  test "fetch a workstep" do
+    VCR.use_cassette("workstep") do
+      Zaikio::MissionControl.with_token(token) do
+        workstep = Zaikio::MissionControl::Workstep.find("2d6cc7cb-a7dd-4f99-958e-df49ae3f1ab3")
+        assert_equal "cutting", workstep.kind
+        assert_equal 1, workstep.executions.count
+        assert_equal 425130, workstep.actual_duration_for_execution
+      end
+    end
+  end
+
+  test "fetch an intermediate product" do
+    VCR.use_cassette("intermediate_product") do
+      Zaikio::MissionControl.with_token(token) do
+        intermediate = Zaikio::MissionControl::IntermediateProduct.find("8119fd65-80ca-4e5c-b4cc-024086290f14")
+        assert_equal "sheet", intermediate.kind
+        assert_equal 51, intermediate.expected_quantity
+      end
+    end
+  end
+
   test "fetch a production frame" do
     VCR.use_cassette("production_frame") do
       Zaikio::MissionControl.with_token(token) do

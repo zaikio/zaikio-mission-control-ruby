@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0]
+
+- Add new `Workstep` and `IntermediateProduct` resources.
 - Add new `Folder` and `FoldingCard` Mission Control `Job` kinds.
 
 ## [0.3.0]
@@ -72,7 +75,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add finishings specification
 - Add jobs and parts specification
 
-[Unreleased]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.3.0..HEAD
+[Unreleased]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.4.0..HEAD
+[0.4.0]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.3.0..v0.4.0
 [0.3.0]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.2.12..v0.3.0
 [0.2.12]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.2.11..v0.2.12
 [0.2.11]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.2.10..v0.2.11

@@ -6,7 +6,7 @@ module Zaikio
       def self.hosts
         {
           development: "https://data.zaikio.test/api/v1/",
-          test: "https://data.zaikio.test/api/v1/",
+          test: "https://data.sandbox.zaikio.com/api/v1/",
           staging: "https://data.staging.zaikio.com/api/v1/",
           sandbox: "https://data.sandbox.zaikio.com/api/v1/",
           production: "https://data.zaikio.com/api/v1/"
