@@ -69,11 +69,18 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
     )
   end
 
+  test "every existing file in jobs, is required in MissionControl" do
+    jobs = Dir.entries("lib/zaikio/mission_control/jobs")
+    jobs.keep_if { _1.ends_with?(".rb") && _1 != "base.rb" }
+    jobs = jobs.map { _1.delete_suffix!(".rb").to_sym }.sort
+
+    assert_equal jobs, Zaikio::MissionControl.jobs
+  end
+
   test "lists all parts" do
     assert_equal(
       [
         Zaikio::MissionControl::Parts::Back,
-        Zaikio::MissionControl::Parts::Base,
         Zaikio::MissionControl::Parts::BusinessCard,
         Zaikio::MissionControl::Parts::Carton,
         Zaikio::MissionControl::Parts::Case,
@@ -85,6 +92,8 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
         Zaikio::MissionControl::Parts::Endpaper,
         Zaikio::MissionControl::Parts::Envelope,
         Zaikio::MissionControl::Parts::Flyer,
+        Zaikio::MissionControl::Parts::Folder,
+        Zaikio::MissionControl::Parts::FoldingCard,
         Zaikio::MissionControl::Parts::Insert,
         Zaikio::MissionControl::Parts::Jacket,
         Zaikio::MissionControl::Parts::Label,
@@ -103,13 +112,21 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
 
     assert_equal(
       %i[
-        back base business_card carton case compliment_slip
+        back business_card carton case compliment_slip
         content continuation_sheet cover cover_letter endpaper
-        envelope flyer insert jacket label leaflet letter_head
+        envelope flyer folder folding_card insert jacket label leaflet letter_head
         lid map_sheet outsert postcard poster self_mailer sheet
       ],
       Zaikio::MissionControl.parts
     )
+  end
+
+  test "every existing file in parts, is required in MissionControl" do
+    parts = Dir.entries("lib/zaikio/mission_control/parts")
+    parts.keep_if { _1.ends_with?(".rb") && _1 != "base.rb" }
+    parts = parts.map { _1.delete_suffix!(".rb").to_sym }.sort
+
+    assert_equal parts, Zaikio::MissionControl.parts
   end
 
   test "lists all finishings" do
@@ -141,6 +158,14 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
       ],
       Zaikio::MissionControl.finishings
     )
+  end
+
+  test "every existing file in finishing, is required in MissionControl" do
+    finishings = Dir.entries("lib/zaikio/mission_control/finishings")
+    finishings.keep_if { _1.ends_with?(".rb") && _1 != "base.rb" }
+    finishings = finishings.map { _1.delete_suffix!(".rb").to_sym }.sort
+
+    assert_equal finishings, Zaikio::MissionControl.finishings
   end
 
   test "returns jobs and parts config" do

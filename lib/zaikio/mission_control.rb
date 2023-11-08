@@ -48,6 +48,8 @@ require "zaikio/mission_control/parts/continuation_sheet"
 require "zaikio/mission_control/parts/cover_letter"
 require "zaikio/mission_control/parts/envelope"
 require "zaikio/mission_control/parts/flyer"
+require "zaikio/mission_control/parts/folder"
+require "zaikio/mission_control/parts/folding_card"
 require "zaikio/mission_control/parts/case"
 require "zaikio/mission_control/parts/endpaper"
 require "zaikio/mission_control/parts/jacket"
@@ -132,7 +134,7 @@ module Zaikio
       def part_klasses
         @part_klasses ||= Zaikio::MissionControl::Parts.constants.sort
                                                        .map { |c| Zaikio::MissionControl::Parts.const_get(c) }
-                                                       .select { |c| c.is_a?(Class) }
+                                                       .select { |c| c.is_a?(Class) }  - [Zaikio::MissionControl::Parts::Base]
       end
 
       def finishing_klasses
