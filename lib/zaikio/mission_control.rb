@@ -152,7 +152,7 @@ module Zaikio
         @worksteps ||= workstep_klasses.map { |k| k.name.demodulize.underscore.to_sym }
       end
 
-      (Zaikio::MissionControl::Jobs.constants  - [:Base]).each do |klass|
+      (Zaikio::MissionControl::Jobs.constants - [:Base]).each do |klass|
         Zaikio.const_set(klass, Zaikio::MissionControl::Jobs.const_get(klass))
       end
     end
