@@ -104,6 +104,7 @@ require "zaikio/mission_control/execution"
 require "zaikio/mission_control/file_reference"
 require "zaikio/mission_control/finishing_application"
 require "zaikio/mission_control/finishing"
+require "zaikio/mission_control/intermediate_product"
 require "zaikio/mission_control/job"
 require "zaikio/mission_control/machine"
 require "zaikio/mission_control/order_line_item"
@@ -112,6 +113,7 @@ require "zaikio/mission_control/part"
 require "zaikio/mission_control/production_frame"
 require "zaikio/mission_control/shipping_option"
 require "zaikio/mission_control/slot"
+require "zaikio/mission_control/workstep"
 
 module Zaikio
   module MissionControl
