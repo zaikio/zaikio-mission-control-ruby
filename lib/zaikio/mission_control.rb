@@ -128,13 +128,13 @@ module Zaikio
         @job_klasses ||= Zaikio::MissionControl::Jobs
                          .constants.sort
                          .map { |c| Zaikio::MissionControl::Jobs.const_get(c) }
-                         .select { |c| c.is_a?(Class) } - [Zaikio::MissionControl::Jobs::Base]
+                         .select { |c| c.is_a?(Class) && !(c < ActiveSupport::TestCase) } - [Zaikio::MissionControl::Jobs::Base]
       end
 
       def part_klasses
         @part_klasses ||= Zaikio::MissionControl::Parts.constants.sort
                                                        .map { |c| Zaikio::MissionControl::Parts.const_get(c) }
-                                                       .select { |c| c.is_a?(Class) }  - [Zaikio::MissionControl::Parts::Base]
+                                                       .select { |c| c.is_a?(Class) } - [Zaikio::MissionControl::Parts::Base]
       end
 
       def finishing_klasses

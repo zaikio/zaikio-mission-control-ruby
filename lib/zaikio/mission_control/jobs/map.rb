@@ -2,8 +2,10 @@ module Zaikio
   module MissionControl
     module Jobs
       class Map < Base
-        has_one_part :map_sheet, required: true
-        has_one_part :cover
+        @parts = {
+          cover: { required: false, multiple: false },
+          map_sheet: { required: true, multiple: false }
+        }
       end
     end
   end

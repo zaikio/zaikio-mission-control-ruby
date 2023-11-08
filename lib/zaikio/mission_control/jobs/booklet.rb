@@ -2,10 +2,12 @@ module Zaikio
   module MissionControl
     module Jobs
       class Booklet < Base
-        has_many_parts :contents, required: true
-        has_one_part :cover
-        has_many_parts :inserts
-        has_many_parts :outserts
+        @parts = {
+          cover: { required: true, multiple: false },
+          content: { required: true, multiple: true },
+          insert: { required: false, multiple: true },
+          outsert: { required: false, multiple: true }
+        }
       end
     end
   end

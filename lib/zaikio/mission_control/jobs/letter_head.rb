@@ -2,7 +2,7 @@ module Zaikio
   module MissionControl
     module Jobs
       class LetterHead < Base
-        has_one_part :letter_head, required: true
+        @parts = { letter_head: { required: true, multiple: false } }
       end
     end
   end

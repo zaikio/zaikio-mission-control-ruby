@@ -50,8 +50,8 @@ class Zaikio::MissionControl::JobsTest < ActiveSupport::TestCase
       "FoldingCard" => {
         folding_card: { required: true, multiple: true }
       },
-      "HardcoverBook" => { content: { required: true, multiples: true },
-                           case: { required: true, multiples: false }, endpaper: { required: true, multiples: true }, jacket: { required: false, multiples: false } },
+      "HardcoverBook" => { content: { required: true, multiple: true },
+                           case: { required: true, multiple: false }, endpaper: { required: true, multiple: true }, jacket: { required: false, multiple: false } },
       "Label" => {
         label: { required: true, multiple: false }
       },
@@ -110,20 +110,20 @@ class Zaikio::MissionControl::JobsTest < ActiveSupport::TestCase
   end
 
   test ".parts, return what it should" do
-    expected = %i[content case endpaper jacket]
+    expected = %i[case content endpaper jacket]
 
     assert_equal expected,
                  Zaikio::MissionControl::Jobs::HardcoverBook.parts
   end
 
   test ".part_config, return what it should" do
-    expected = { required: true, multiples: true }
+    expected = { required: true, multiple: true }
     assert_equal expected,
                  Zaikio::MissionControl::Jobs::HardcoverBook.part_config(:content)
   end
 
   test ".part_klasses, return what it should" do
-    expected = [Zaikio::MissionControl::Parts::Content, Zaikio::MissionControl::Parts::Case,
+    expected = [Zaikio::MissionControl::Parts::Case, Zaikio::MissionControl::Parts::Content,
                 Zaikio::MissionControl::Parts::Endpaper, Zaikio::MissionControl::Parts::Jacket]
 
     assert_equal expected,

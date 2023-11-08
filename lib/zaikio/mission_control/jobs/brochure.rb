@@ -2,10 +2,12 @@ module Zaikio
   module MissionControl
     module Jobs
       class Brochure < Base
-        has_many_parts :contents, required: true
-        has_one_part :cover, required: true
-        has_many_parts :inserts
-        has_many_parts :outserts
+        @parts = {
+          content: { required: true, multiple: true },
+          cover: { required: false, multiple: false },
+          insert: { required: false, multiple: false },
+          outsert: { required: false, multiple: false }
+        }
       end
     end
   end
