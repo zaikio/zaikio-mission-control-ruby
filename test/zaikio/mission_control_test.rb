@@ -37,6 +37,7 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
         Zaikio::MissionControl::Jobs::CoverLetter,
         Zaikio::MissionControl::Jobs::Envelope,
         Zaikio::MissionControl::Jobs::Flyer,
+        Zaikio::MissionControl::Jobs::Folder,
         Zaikio::MissionControl::Jobs::HardcoverBook,
         Zaikio::MissionControl::Jobs::Label,
         Zaikio::MissionControl::Jobs::Leaflet,
@@ -59,7 +60,7 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
       %i[
         booklet box brochure business_card carton carton_two_piece
         compliment_slip continuation_sheet cover_letter envelope
-        flyer hardcover_book label leaflet letter_head magazine
+        flyer folder hardcover_book label leaflet letter_head magazine
         map ncr_pad newspaper notebook postcard poster
         self_mailer sheet softcover_book
       ],
@@ -250,7 +251,7 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
         workstep = Zaikio::MissionControl::Workstep.find("2d6cc7cb-a7dd-4f99-958e-df49ae3f1ab3")
         assert_equal "cutting", workstep.kind
         assert_equal 1, workstep.executions.count
-        assert_equal 425130, workstep.actual_duration_for_execution
+        assert_equal 425_130, workstep.actual_duration_for_execution
       end
     end
   end
