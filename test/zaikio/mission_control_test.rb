@@ -115,6 +115,7 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
       [
         Zaikio::MissionControl::Finishings::CombBinding,
         Zaikio::MissionControl::Finishings::Embossing,
+        Zaikio::MissionControl::Finishings::Engraving,
         Zaikio::MissionControl::Finishings::FoilStamp,
         Zaikio::MissionControl::Finishings::Glue,
         Zaikio::MissionControl::Finishings::HeadBand,
@@ -133,7 +134,7 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
 
     assert_equal(
       %i[
-        comb_binding embossing foil_stamp glue head_band hole
+        comb_binding embossing engraving foil_stamp glue head_band hole
         lamination perfect_binding perforation ring_binding
         saddle_stitch spiral_binding strip_binding thread_sewing
       ],
@@ -250,7 +251,7 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
         workstep = Zaikio::MissionControl::Workstep.find("2d6cc7cb-a7dd-4f99-958e-df49ae3f1ab3")
         assert_equal "cutting", workstep.kind
         assert_equal 1, workstep.executions.count
-        assert_equal 425130, workstep.actual_duration_for_execution
+        assert_equal 425_130, workstep.actual_duration_for_execution
       end
     end
   end
