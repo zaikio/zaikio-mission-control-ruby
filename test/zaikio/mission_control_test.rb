@@ -38,6 +38,7 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
         Zaikio::MissionControl::Jobs::Envelope,
         Zaikio::MissionControl::Jobs::Flyer,
         Zaikio::MissionControl::Jobs::Folder,
+        Zaikio::MissionControl::Jobs::FoldingCard,
         Zaikio::MissionControl::Jobs::HardcoverBook,
         Zaikio::MissionControl::Jobs::Label,
         Zaikio::MissionControl::Jobs::Leaflet,
@@ -60,7 +61,7 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
       %i[
         booklet box brochure business_card carton carton_two_piece
         compliment_slip continuation_sheet cover_letter envelope
-        flyer folder hardcover_book label leaflet letter_head magazine
+        flyer folder folding_card hardcover_book label leaflet letter_head magazine
         map ncr_pad newspaper notebook postcard poster
         self_mailer sheet softcover_book
       ],
