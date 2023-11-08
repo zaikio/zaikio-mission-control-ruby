@@ -1,7 +1,7 @@
 module Zaikio
   module MissionControl
-    module IntermediateProduct
-      class Fold < Base
+    module IntermediateProducts
+      class Product < Base
       end
     end
   end

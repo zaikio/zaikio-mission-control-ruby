@@ -1,6 +1,6 @@
 module Zaikio
   module MissionControl
-    module IntermediateProduct
+    module IntermediateProducts
       class Plate < Base
       end
     end

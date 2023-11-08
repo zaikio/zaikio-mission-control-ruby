@@ -1,7 +1,7 @@
 module Zaikio
   module MissionControl
-    module IntermediateProduct
-      class LaminatedSheet < Base
+    module IntermediateProducts
+      class BookBlock < Base
       end
     end
   end

@@ -1,7 +1,7 @@
 module Zaikio
   module MissionControl
-    module IntermediateProduct
-      class Product < Base
+    module IntermediateProducts
+      class Sheet < Base
       end
     end
   end

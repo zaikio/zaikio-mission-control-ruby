@@ -1,7 +1,7 @@
 module Zaikio
   module MissionControl
-    module IntermediateProduct
-      class BookBlock < Base
+    module IntermediateProducts
+      class Fold < Base
       end
     end
   end
