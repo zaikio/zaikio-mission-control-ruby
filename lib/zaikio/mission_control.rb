@@ -56,13 +56,13 @@ require "zaikio/mission_control/worksteps/printing"
 require "zaikio/mission_control/worksteps/thread_sewing"
 
 # Intermediate products
-require "zaikio/mission_control/intermediate_product/base"
-require "zaikio/mission_control/intermediate_product/book_block"
-require "zaikio/mission_control/intermediate_product/fold"
-require "zaikio/mission_control/intermediate_product/laminated_sheet"
-require "zaikio/mission_control/intermediate_product/plate"
-require "zaikio/mission_control/intermediate_product/product"
-require "zaikio/mission_control/intermediate_product/sheet"
+require "zaikio/mission_control/intermediate_products/base"
+require "zaikio/mission_control/intermediate_products/book_block"
+require "zaikio/mission_control/intermediate_products/fold"
+require "zaikio/mission_control/intermediate_products/laminated_sheet"
+require "zaikio/mission_control/intermediate_products/plate"
+require "zaikio/mission_control/intermediate_products/product"
+require "zaikio/mission_control/intermediate_products/sheet"
 
 # Models
 require "zaikio/mission_control/color"

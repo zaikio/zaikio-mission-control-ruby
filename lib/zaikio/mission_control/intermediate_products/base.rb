@@ -1,6 +1,6 @@
 module Zaikio
   module MissionControl
-    module IntermediateProduct
+    module IntermediateProducts
       class Base < Zaikio::MissionControl::Base
       end
     end
