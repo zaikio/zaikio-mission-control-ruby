@@ -160,6 +160,14 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
     )
   end
 
+  test "every existing file in finishing, is required in MissionControl" do
+    finishings = Dir.entries("lib/zaikio/mission_control/finishings")
+    finishings.keep_if { _1.ends_with?(".rb") && _1 != "base.rb" }
+    finishings = finishings.map { _1.delete_suffix!(".rb").to_sym }.sort
+
+    assert_equal finishings, Zaikio::MissionControl.finishings
+  end
+
   test "returns jobs and parts config" do
     assert_equal(
       %i[
