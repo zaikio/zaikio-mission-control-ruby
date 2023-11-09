@@ -8,6 +8,26 @@ module Zaikio
             @parts.keys
           end
 
+          def worksteps
+            steps ||= {}
+
+            @parts.keys.flat_map do |part|
+              steps[part] = Zaikio::MissionControl::Parts.const_get(part.to_s.classify).worksteps
+            end
+
+            steps
+          end
+
+          def finishings
+            finishings ||= {}
+
+            @parts.keys.flat_map do |part|
+              finishings[part] = Zaikio::MissionControl::Parts.const_get(part.to_s.classify).finishings
+            end
+
+            finishings
+          end
+
           def part_config(part_name_or_klass)
             @parts ||= {}
             part_name_or_klass = if part_name_or_klass.is_a?(Symbol)
