@@ -2,7 +2,9 @@ module Zaikio
   module MissionControl
     module Worksteps
       class Folding < Base
-        has_one_intermediate_product :fold, required: true
+        @intermediate_products = {
+          fold: { required: true }
+        }
       end
     end
   end

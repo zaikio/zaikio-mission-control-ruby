@@ -3,24 +3,12 @@ module Zaikio
     module Parts
       class Base < Zaikio::MissionControl::Base
         class << self
-          def has_one_finishing(name, required: false) # rubocop:disable Naming/PredicateName
-            @finishings ||= {}
-            @finishings[name] = { required: required }
-          end
-
-          def has_one_workstep(name, required: false) # rubocop:disable Naming/PredicateName
-            @worksteps ||= {}
-            @worksteps[name] = { required: required }
-          end
-
           def finishings
-            @finishings.flat_map do |finishing, option|
+            @finishings ||= {}
+
+            @finishings.keys.flat_map do |finishing, option|
               option[:required] ? finishing : finishing.to_s.concat("_maybe").to_sym
             end
-          end
-
-          def worksteps
-            worksteps_from_parts.concat(worksteps_from_finishings)
           end
 
           def worksteps_from_parts
@@ -39,6 +27,10 @@ module Zaikio
               name = option[:required] ? finishing : finishing.to_s.concat("_maybe").to_sym
               { name => Zaikio::MissionControl::Worksteps.const_get(finishing.to_s.classify).intermediate_products }
             end
+          end
+
+          def worksteps
+            worksteps_from_parts.concat(worksteps_from_finishings)
           end
         end
       end

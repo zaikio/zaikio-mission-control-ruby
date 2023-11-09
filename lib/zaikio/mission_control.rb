@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 require "faraday"
 require "spyke"
 require "zaikio-client-helpers"
@@ -192,3 +193,4 @@ module Zaikio
     end
   end
 end
+# rubocop:enable Layout/LineLength
