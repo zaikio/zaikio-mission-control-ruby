@@ -2,7 +2,7 @@ module Zaikio
   module MissionControl
     module Jobs
       class Label < Base
-        has_one_part :label, required: true
+        @parts = { label: { required: true, multiple: false } }
       end
     end
   end

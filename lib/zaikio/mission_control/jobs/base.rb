@@ -3,16 +3,6 @@ module Zaikio
     module Jobs
       class Base < Zaikio::MissionControl::Base
         class << self
-          def has_one_part(name, required: false) # rubocop:disable Naming/PredicateName
-            @parts ||= {}
-            @parts[name] = { required: required, multiples: false }
-          end
-
-          def has_many_parts(name, required: false) # rubocop:disable Naming/PredicateName
-            @parts ||= {}
-            @parts[name.to_s.singularize.to_sym] = { required: required, multiples: true }
-          end
-
           def parts
             @parts ||= {}
             @parts.keys
@@ -56,7 +46,7 @@ module Zaikio
           end
 
           def multiples?(part_name_or_klass)
-            part_config(part_name_or_klass)[:multiples]
+            part_config(part_name_or_klass)[:multiple]
           end
 
           def required?(part_name_or_klass)

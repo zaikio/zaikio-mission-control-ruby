@@ -2,7 +2,7 @@ module Zaikio
   module MissionControl
     module Jobs
       class Sheet < Base
-        has_one_part :sheet, required: true
+        @parts = { sheet: { required: true, multiple: false } }
       end
     end
   end

@@ -2,7 +2,7 @@ module Zaikio
   module MissionControl
     module Jobs
       class Folder < Base
-        has_many_parts :folders, required: true
+        @parts = { folder: { required: true, multiple: true } }
       end
     end
   end

@@ -17,6 +17,8 @@ require "zaikio/mission_control/jobs/continuation_sheet"
 require "zaikio/mission_control/jobs/cover_letter"
 require "zaikio/mission_control/jobs/envelope"
 require "zaikio/mission_control/jobs/flyer"
+require "zaikio/mission_control/jobs/folder"
+require "zaikio/mission_control/jobs/folding_card"
 require "zaikio/mission_control/jobs/hardcover_book"
 require "zaikio/mission_control/jobs/label"
 require "zaikio/mission_control/jobs/leaflet"
@@ -47,6 +49,8 @@ require "zaikio/mission_control/parts/endpaper"
 require "zaikio/mission_control/parts/envelope"
 require "zaikio/mission_control/parts/flyer"
 require "zaikio/mission_control/parts/insert"
+require "zaikio/mission_control/parts/folder"
+require "zaikio/mission_control/parts/folding_card"
 require "zaikio/mission_control/parts/jacket"
 require "zaikio/mission_control/parts/label"
 require "zaikio/mission_control/parts/leaflet"
@@ -143,13 +147,13 @@ module Zaikio
         @job_klasses ||= Zaikio::MissionControl::Jobs
                          .constants.sort
                          .map { |c| Zaikio::MissionControl::Jobs.const_get(c) }
-                         .select { |c| c.is_a?(Class) } - [Zaikio::MissionControl::Jobs::Base]
+                         .select { |c| c.is_a?(Class) && !(c < ActiveSupport::TestCase) } - [Zaikio::MissionControl::Jobs::Base]
       end
 
       def part_klasses
         @part_klasses ||= Zaikio::MissionControl::Parts.constants.sort
                                                        .map { |c| Zaikio::MissionControl::Parts.const_get(c) }
-                                                       .select { |c| c.is_a?(Class) }
+                                                       .select { |c| c.is_a?(Class) } - [Zaikio::MissionControl::Parts::Base]
       end
 
       def finishing_klasses

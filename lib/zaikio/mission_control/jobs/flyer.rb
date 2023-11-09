@@ -2,7 +2,7 @@ module Zaikio
   module MissionControl
     module Jobs
       class Flyer < Base
-        has_one_part :flyer, required: true
+        @parts = { flyer: { required: true, multiple: false } }
       end
     end
   end

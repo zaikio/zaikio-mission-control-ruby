@@ -37,6 +37,8 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
         Zaikio::MissionControl::Jobs::CoverLetter,
         Zaikio::MissionControl::Jobs::Envelope,
         Zaikio::MissionControl::Jobs::Flyer,
+        Zaikio::MissionControl::Jobs::Folder,
+        Zaikio::MissionControl::Jobs::FoldingCard,
         Zaikio::MissionControl::Jobs::HardcoverBook,
         Zaikio::MissionControl::Jobs::Label,
         Zaikio::MissionControl::Jobs::Leaflet,
@@ -59,7 +61,7 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
       %i[
         booklet box brochure business_card carton carton_two_piece
         compliment_slip continuation_sheet cover_letter envelope
-        flyer hardcover_book label leaflet letter_head magazine
+        flyer folder folding_card hardcover_book label leaflet letter_head magazine
         map ncr_pad newspaper notebook postcard poster
         self_mailer sheet softcover_book
       ],
@@ -67,11 +69,18 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
     )
   end
 
+  test "every existing file in jobs, is required in MissionControl" do
+    jobs = Dir.entries("lib/zaikio/mission_control/jobs")
+    jobs.keep_if { _1.ends_with?(".rb") && _1 != "base.rb" }
+    jobs = jobs.map { _1.delete_suffix!(".rb").to_sym }.sort
+
+    assert_equal jobs, Zaikio::MissionControl.jobs
+  end
+
   test "lists all parts" do
     assert_equal(
       [
         Zaikio::MissionControl::Parts::Back,
-        Zaikio::MissionControl::Parts::Base,
         Zaikio::MissionControl::Parts::BusinessCard,
         Zaikio::MissionControl::Parts::Carton,
         Zaikio::MissionControl::Parts::Case,
@@ -83,6 +92,8 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
         Zaikio::MissionControl::Parts::Endpaper,
         Zaikio::MissionControl::Parts::Envelope,
         Zaikio::MissionControl::Parts::Flyer,
+        Zaikio::MissionControl::Parts::Folder,
+        Zaikio::MissionControl::Parts::FoldingCard,
         Zaikio::MissionControl::Parts::Insert,
         Zaikio::MissionControl::Parts::Jacket,
         Zaikio::MissionControl::Parts::Label,
@@ -101,13 +112,21 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
 
     assert_equal(
       %i[
-        back base business_card carton case compliment_slip
+        back business_card carton case compliment_slip
         content continuation_sheet cover cover_letter endpaper
-        envelope flyer insert jacket label leaflet letter_head
+        envelope flyer folder folding_card insert jacket label leaflet letter_head
         lid map_sheet outsert postcard poster self_mailer sheet
       ],
       Zaikio::MissionControl.parts
     )
+  end
+
+  test "every existing file in parts, is required in MissionControl" do
+    parts = Dir.entries("lib/zaikio/mission_control/parts")
+    parts.keep_if { _1.ends_with?(".rb") && _1 != "base.rb" }
+    parts = parts.map { _1.delete_suffix!(".rb").to_sym }.sort
+
+    assert_equal parts, Zaikio::MissionControl.parts
   end
 
   test "lists all finishings" do
@@ -142,11 +161,19 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
     )
   end
 
+  test "every existing file in finishing, is required in MissionControl" do
+    finishings = Dir.entries("lib/zaikio/mission_control/finishings")
+    finishings.keep_if { _1.ends_with?(".rb") && _1 != "base.rb" }
+    finishings = finishings.map { _1.delete_suffix!(".rb").to_sym }.sort
+
+    assert_equal finishings, Zaikio::MissionControl.finishings
+  end
+
   test "returns jobs and parts config" do
     assert_equal(
       %i[
-        content
         cover
+        content
         insert
         outsert
       ],
@@ -159,8 +186,8 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
     assert Zaikio::MissionControl::Jobs::Booklet.required?(Zaikio::MissionControl::Parts::Content)
     assert_equal(
       [
-        Zaikio::MissionControl::Parts::Content,
         Zaikio::MissionControl::Parts::Cover,
+        Zaikio::MissionControl::Parts::Content,
         Zaikio::MissionControl::Parts::Insert,
         Zaikio::MissionControl::Parts::Outsert
       ],
@@ -262,6 +289,17 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
         intermediate = Zaikio::MissionControl::IntermediateProduct.find("8119fd65-80ca-4e5c-b4cc-024086290f14")
         assert_equal "sheet", intermediate.kind
         assert_equal 51, intermediate.expected_quantity
+      end
+    end
+  end
+
+  test "fetch a workstep from an execution" do
+    VCR.use_cassette("workstep_from_execution") do
+      Zaikio::MissionControl.with_token(token) do
+        execution = Zaikio::MissionControl::Execution.find("7ff2e44e-2ab0-40ed-bc5f-2714edb8a0e0")
+        workstep = execution.workstep
+        assert_equal "cutting", workstep.kind
+        assert_equal 1, workstep.executions.count
       end
     end
   end

@@ -2,9 +2,11 @@ module Zaikio
   module MissionControl
     module Jobs
       class Notebook < Base
-        has_many_parts :contents, required: true
-        has_one_part :cover, required: true
-        has_one_part :back
+        @parts = {
+          content: { required: true, multiple: true },
+          cover: { required: true, multiple: false },
+          back: { required: false, multiple: false }
+        }
       end
     end
   end

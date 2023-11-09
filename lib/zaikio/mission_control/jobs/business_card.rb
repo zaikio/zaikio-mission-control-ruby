@@ -2,7 +2,7 @@ module Zaikio
   module MissionControl
     module Jobs
       class BusinessCard < Base
-        has_many_parts :business_cards, required: true
+        @parts = { business_card: { required: true, multiple: true } }
       end
     end
   end

@@ -2,8 +2,10 @@ module Zaikio
   module MissionControl
     module Jobs
       class Newspaper < Base
-        has_one_part :content, required: true
-        has_many_parts :inserts
+        @parts = {
+          content: { required: true, multiple: true },
+          insert: { required: false, multiple: true }
+        }
       end
     end
   end

@@ -2,7 +2,7 @@ module Zaikio
   module MissionControl
     module Jobs
       class Poster < Base
-        has_one_part :poster, required: true
+        @parts = { poster: { required: true, multiple: false } }
       end
     end
   end
