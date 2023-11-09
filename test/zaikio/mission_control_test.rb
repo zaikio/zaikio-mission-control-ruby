@@ -30,6 +30,7 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
         Zaikio::MissionControl::Jobs::Box,
         Zaikio::MissionControl::Jobs::Brochure,
         Zaikio::MissionControl::Jobs::BusinessCard,
+        Zaikio::MissionControl::Jobs::Card,
         Zaikio::MissionControl::Jobs::Carton,
         Zaikio::MissionControl::Jobs::CartonTwoPiece,
         Zaikio::MissionControl::Jobs::ComplimentSlip,
@@ -59,7 +60,7 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
 
     assert_equal(
       %i[
-        booklet box brochure business_card carton carton_two_piece
+        booklet box brochure business_card card carton carton_two_piece
         compliment_slip continuation_sheet cover_letter envelope
         flyer folder folding_card hardcover_book label leaflet letter_head magazine
         map ncr_pad newspaper notebook postcard poster
@@ -82,6 +83,7 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
       [
         Zaikio::MissionControl::Parts::Back,
         Zaikio::MissionControl::Parts::BusinessCard,
+        Zaikio::MissionControl::Parts::Card,
         Zaikio::MissionControl::Parts::Carton,
         Zaikio::MissionControl::Parts::Case,
         Zaikio::MissionControl::Parts::ComplimentSlip,
@@ -112,7 +114,7 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
 
     assert_equal(
       %i[
-        back business_card carton case compliment_slip
+        back business_card card carton case compliment_slip
         content continuation_sheet cover cover_letter endpaper
         envelope flyer folder folding_card insert jacket label leaflet letter_head
         lid map_sheet outsert postcard poster self_mailer sheet
