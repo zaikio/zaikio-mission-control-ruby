@@ -51,7 +51,9 @@ class Zaikio::MissionControl::JobsTest < ActiveSupport::TestCase
         folding_card: { required: true, multiple: true }
       },
       "HardcoverBook" => { content: { required: true, multiple: true },
-                           case: { required: true, multiple: false }, endpaper: { required: true, multiple: true }, jacket: { required: false, multiple: false } },
+                           case: { required: true, multiple: false },
+                           endpaper: { required: true, multiple: true },
+                           jacket: { required: false, multiple: false } },
       "Label" => {
         label: { required: true, multiple: false }
       },
@@ -144,5 +146,41 @@ class Zaikio::MissionControl::JobsTest < ActiveSupport::TestCase
 
   test ".required?, when required true, return false" do
     assert_not Zaikio::MissionControl::Jobs::HardcoverBook.required?(:jacket)
+  end
+
+  test ".worksteps on HardcoverBook, return what it should" do
+    expected = {
+      case: [
+        { ctp_maybe: [:plate] },
+        { printing: %i[sheet_maybe roll_maybe] },
+        { cutting_maybe: [:product] },
+        { folding_maybe: [:fold] },
+        { lamination_maybe: [:laminated_sheet] }
+      ],
+      content: [
+        { ctp_maybe: [:plate] },
+        { printing: %i[sheet_maybe roll_maybe] },
+        { cutting: [:product] },
+        { folding: [:fold] },
+        { thread_sewing_maybe: [:book_block] },
+        { lamination_maybe: [:laminated_sheet] }
+      ],
+      endpaper: [
+        { ctp_maybe: [:plate] },
+        { printing_maybe: %i[sheet_maybe roll_maybe] },
+        { cutting_maybe: [:product] },
+        { folding_maybe: [:fold] },
+        { lamination_maybe: [:laminated_sheet] }
+      ],
+      jacket: [
+        { ctp_maybe: [:plate] },
+        { printing: %i[sheet_maybe roll_maybe] },
+        { cutting_maybe: [:product] },
+        { folding_maybe: [:fold] },
+        { lamination_maybe: [:laminated_sheet] }
+      ]
+    }
+
+    assert_equal expected, Zaikio::MissionControl::Jobs::HardcoverBook.worksteps
   end
 end
