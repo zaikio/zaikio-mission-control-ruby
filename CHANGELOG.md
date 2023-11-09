@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.2]
+
+- Fix `Folder` and `FoldingCard` Mission Control `Job` kinds being listed as available kinds 
+
 ## [0.4.1]
 
 - Add `belongs_to` relationship to `Execution` for `Workstep`
@@ -79,7 +83,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add finishings specification
 - Add jobs and parts specification
 
-[Unreleased]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.4.1..HEAD
+[Unreleased]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.4.2..HEAD
+[0.4.2]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.4.0..v0.4.2
 [0.4.1]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.4.0..v0.4.1
 [0.4.0]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.3.0..v0.4.0
 [0.3.0]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.2.12..v0.3.0
