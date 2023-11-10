@@ -1,0 +1,212 @@
+banner:
+  banner:
+    required: true
+    multiple: false
+booklet:
+  cover:
+    required: true
+    multiple: false
+  content:
+    required: true
+    multiple: true
+  insert:
+    required: false
+    multiple: true
+  outsert:
+    required: false
+    multiple: true
+box:
+  base:
+    required: true
+    multiple: false
+  lid:
+    required: true
+    multiple: false
+brochure:
+  content:
+    required: true
+    multiple: true
+  cover:
+    required: false
+    multiple: false
+  insert:
+    required: false
+    multiple: false
+  outsert:
+    required: false
+    multiple: false
+business_card:
+  business_card:
+    required: true
+    multiple: true
+calendar:
+  cover:
+    required: false
+    multiple: false
+  content:
+    required: true
+    multiple: true
+card:
+  card:
+    required: true
+    multiple: true
+carton_two_piece:
+  base:
+    required: true
+    multiple: false
+  lid:
+    required: true
+    multiple: false
+carton:
+  carton:
+    required: true
+    multiple: false
+cloth:
+  cloth:
+    required: true
+    multiple: false
+compliment_slip:
+  compliment_slip:
+    required: true
+    multiple: false
+continuation_sheet:
+  continuation_sheet:
+    required: true
+    multiple: false
+cover_letter:
+  cover_letter:
+    required: true
+    multiple: false
+envelope:
+  envelope:
+    required: true
+    multiple: false
+fabric:
+  fabric:
+    required: true
+    multiple: false
+flag:
+  flag:
+    required: true
+    multiple: false
+flyer:
+  flyer:
+    required: true
+    multiple: false
+folder:
+  folder:
+    required: true
+    multiple: true
+folding_card:
+  folding_card:
+    required: true
+    multiple: true
+hardcover_book:
+  case:
+    required: true
+    multiple: false
+  content:
+    required: true
+    multiple: true
+  endpaper:
+    required: true
+    multiple: true
+  jacket:
+    required: false
+    multiple: false
+label:
+  label:
+    required: true
+    multiple: false
+leaflet:
+  leaflet:
+    required: true
+    multiple: false
+letter_head:
+  letter_head:
+    required: true
+    multiple: false
+magazine:
+  content:
+    required: true
+    multiple: true
+  cover:
+    required: true
+    multiple: false
+  insert:
+    required: false
+    multiple: false
+  outsert:
+    required: false
+    multiple: false
+map:
+  cover:
+    required: false
+    multiple: false
+  map_sheet:
+    required: true
+    multiple: false
+ncr_pad:
+  content:
+    required: true
+    multiple: true
+  back:
+    required: true
+    multiple: false
+  cover:
+    required: false
+    multiple: false
+newspaper:
+  content:
+    required: true
+    multiple: true
+  insert:
+    required: false
+    multiple: true
+notebook:
+  content:
+    required: true
+    multiple: true
+  cover:
+    required: true
+    multiple: false
+  back:
+    required: false
+    multiple: false
+
+pen:
+  barrel:
+    required: true
+    multiple: false
+  clip:
+    required: true
+    multiple: false
+postcard:
+  postcard:
+    required: true
+    multiple: false
+poster:
+  poster:
+    required: true
+    multiple: false
+self_mailer:
+  self_mailer:
+    required: true
+    multiple: false
+sheet:
+  sheet:
+    required: true
+    multiple: false
+sign:
+  sign:
+    required: true
+    multiple: false
+softcover_book:
+  content:
+    required: true
+    multiple: true
+  cover:
+    required: true
+    multiple: false
+
+

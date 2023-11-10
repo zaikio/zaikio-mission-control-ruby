@@ -138,6 +138,8 @@ module Zaikio
       end
 
       def jobs
+        binding.pry
+
         @jobs ||= job_klasses.map { |k| k.name.demodulize.underscore.to_sym }
       end
 
