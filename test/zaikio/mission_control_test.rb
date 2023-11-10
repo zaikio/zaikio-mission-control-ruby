@@ -1,6 +1,105 @@
 require "test_helper"
 
 class Zaikio::MissionControlTest < ActiveSupport::TestCase
+  JOB_KIND_CLASSES = [
+    Zaikio::MissionControl::Jobs::Booklet,
+    Zaikio::MissionControl::Jobs::Box,
+    Zaikio::MissionControl::Jobs::Brochure,
+    Zaikio::MissionControl::Jobs::BusinessCard,
+    Zaikio::MissionControl::Jobs::Card,
+    Zaikio::MissionControl::Jobs::Carton,
+    Zaikio::MissionControl::Jobs::CartonTwoPiece,
+    Zaikio::MissionControl::Jobs::ComplimentSlip,
+    Zaikio::MissionControl::Jobs::ContinuationSheet,
+    Zaikio::MissionControl::Jobs::CoverLetter,
+    Zaikio::MissionControl::Jobs::Envelope,
+    Zaikio::MissionControl::Jobs::Flyer,
+    Zaikio::MissionControl::Jobs::Folder,
+    Zaikio::MissionControl::Jobs::FoldingCard,
+    Zaikio::MissionControl::Jobs::HardcoverBook,
+    Zaikio::MissionControl::Jobs::Label,
+    Zaikio::MissionControl::Jobs::Leaflet,
+    Zaikio::MissionControl::Jobs::LetterHead,
+    Zaikio::MissionControl::Jobs::Magazine,
+    Zaikio::MissionControl::Jobs::Map,
+    Zaikio::MissionControl::Jobs::NcrPad,
+    Zaikio::MissionControl::Jobs::Newspaper,
+    Zaikio::MissionControl::Jobs::Notebook,
+    Zaikio::MissionControl::Jobs::Postcard,
+    Zaikio::MissionControl::Jobs::Poster,
+    Zaikio::MissionControl::Jobs::SelfMailer,
+    Zaikio::MissionControl::Jobs::Sheet,
+    Zaikio::MissionControl::Jobs::SoftcoverBook
+  ].freeze
+
+  JOB_KINDS = %i[
+    booklet box brochure business_card card carton carton_two_piece
+    compliment_slip continuation_sheet cover_letter envelope
+    flyer folder folding_card hardcover_book label leaflet letter_head magazine
+    map ncr_pad newspaper notebook postcard poster
+    self_mailer sheet softcover_book
+  ].freeze
+
+  PART_KIND_CLASSES = [
+    Zaikio::MissionControl::Parts::Back,
+    Zaikio::MissionControl::Parts::BusinessCard,
+    Zaikio::MissionControl::Parts::Card,
+    Zaikio::MissionControl::Parts::Carton,
+    Zaikio::MissionControl::Parts::Case,
+    Zaikio::MissionControl::Parts::ComplimentSlip,
+    Zaikio::MissionControl::Parts::Content,
+    Zaikio::MissionControl::Parts::ContinuationSheet,
+    Zaikio::MissionControl::Parts::Cover,
+    Zaikio::MissionControl::Parts::CoverLetter,
+    Zaikio::MissionControl::Parts::Endpaper,
+    Zaikio::MissionControl::Parts::Envelope,
+    Zaikio::MissionControl::Parts::Flyer,
+    Zaikio::MissionControl::Parts::Folder,
+    Zaikio::MissionControl::Parts::FoldingCard,
+    Zaikio::MissionControl::Parts::Insert,
+    Zaikio::MissionControl::Parts::Jacket,
+    Zaikio::MissionControl::Parts::Label,
+    Zaikio::MissionControl::Parts::Leaflet,
+    Zaikio::MissionControl::Parts::LetterHead,
+    Zaikio::MissionControl::Parts::Lid,
+    Zaikio::MissionControl::Parts::MapSheet,
+    Zaikio::MissionControl::Parts::Outsert,
+    Zaikio::MissionControl::Parts::Postcard,
+    Zaikio::MissionControl::Parts::Poster,
+    Zaikio::MissionControl::Parts::SelfMailer,
+    Zaikio::MissionControl::Parts::Sheet
+  ].freeze
+
+  PART_KINDS = %i[
+    back business_card card carton case compliment_slip
+    content continuation_sheet cover cover_letter endpaper
+    envelope flyer folder folding_card insert jacket label leaflet letter_head
+    lid map_sheet outsert postcard poster self_mailer sheet
+  ].freeze
+
+  FINISHING_CLASSES = [
+    Zaikio::MissionControl::Finishings::CombBinding,
+    Zaikio::MissionControl::Finishings::Embossing,
+    Zaikio::MissionControl::Finishings::FoilStamp,
+    Zaikio::MissionControl::Finishings::Glue,
+    Zaikio::MissionControl::Finishings::HeadBand,
+    Zaikio::MissionControl::Finishings::Hole,
+    Zaikio::MissionControl::Finishings::Lamination,
+    Zaikio::MissionControl::Finishings::PerfectBinding,
+    Zaikio::MissionControl::Finishings::Perforation,
+    Zaikio::MissionControl::Finishings::RingBinding,
+    Zaikio::MissionControl::Finishings::SaddleStitch,
+    Zaikio::MissionControl::Finishings::SpiralBinding,
+    Zaikio::MissionControl::Finishings::StripBinding,
+    Zaikio::MissionControl::Finishings::ThreadSewing
+  ].freeze
+
+  FINISHINGS = %i[
+    comb_binding embossing foil_stamp glue head_band hole
+    lamination perfect_binding perforation ring_binding
+    saddle_stitch spiral_binding strip_binding thread_sewing
+  ].freeze
+
   def token
     # rubocop:disable Layout/LineLength
     "eyJraWQiOiI0ZmZhNTc5MmQwMTJlMjY0YTEzODk5ZmZkYTA3YmVhYzkwOTA4NjRhNmY4MWU5YjQxMGNkOTFkY2UxOTNlODg3IiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJaQUkiLCJzdWIiOiJPcmdhbml6YXRpb24vOWQ2YmExM2YtN2QzYi00ZjI4LWIzZTMtYmRiMThjOGEyNjY4IiwiYXVkIjpbImtleWxpbmVfY2xhc3NpYyJdLCJqdGkiOiI4ZTBiOTI0MC1mNTdjLTQ4MjMtYTlmMi1lYjZkMzhkZGNiYmQiLCJuYmYiOjE2ODA1OTM5MDMsImV4cCI6MTY4MDU5NzUwMywiamt1IjoiaHR0cHM6Ly9odWIuc2FuZGJveC56YWlraW8uY29tL2FwaS92MS9qd3RfcHVibGljX2tleXMiLCJzY29wZSI6WyJkaXJlY3RvcnkubWFjaGluZXMucnciLCJkaXJlY3Rvcnkub3JnYW5pemF0aW9uLnIiLCJkaXJlY3Rvcnkub3JnYW5pemF0aW9uX21lbWJlcnMucnciLCJkaXJlY3Rvcnkuc2l0ZXMucnciLCJkaXJlY3Rvcnkuc3BlY2lhbGlzdHMucnciLCJtaXNzaW9uX2NvbnRyb2wuY29tbWlzc2lvbmluZ3MucnciLCJtaXNzaW9uX2NvbnRyb2wuZXN0aW1hdGVzLnJ3IiwibWlzc2lvbl9jb250cm9sLmpvYnMucnciLCJtaXNzaW9uX2NvbnRyb2wubGlzdHMucnciLCJtaXNzaW9uX2NvbnRyb2wub3JkZXJzLnJ3IiwicHJvY3VyZW1lbnRfY29uc3VtZXIuYXJ0aWNsZV9iYXNlLnIiLCJwcm9jdXJlbWVudF9jb25zdW1lci5jb250cmFjdHMucnciLCJwcm9jdXJlbWVudF9jb25zdW1lci5tYXRlcmlhbF9yZXF1aXJlbWVudHMucnciLCJwcm9jdXJlbWVudF9jb25zdW1lci5vcmRlcnMucnciLCJ3YXJlaG91c2UuY29uc3VtcHRpb25zX2FuZF9yZXNlcnZhdGlvbnMucnciLCJ3YXJlaG91c2UuZmluaXNoZWRfZ29vZHNfY2FsbF9vZmZzLnIiLCJ3YXJlaG91c2Uuc3RvY2tfbGV2ZWxzLnJ3Iiwid2FyZWhvdXNlLndhcmVob3VzZXMucnciXX0.vyJ1Q8UsYbNTBIalGxYcTao6CdqTjwPvAsdw8P3A84XGJeggeyMjiPbqioOr6AXhwpFjqrcjYw2xms69RTIDT_EYs6_0JzJQMujtuq04hqIPx2oOphMKCgjcoVkSjsnl--lW_qZj-FCVbcXoV9KQmVm7cfQK6pzA6k-1Qf_3ln-mvN32nOE7JPO6fDl_yebUpfvOKlgultLxxDtM8nHhiArpCvp5StZlFUVjUUhb_qI6uX58Z9Wk3j-7WrOdjtvtaN0CrknKV8GPWQNJMlWrF1uqA3t5X-KWRi5NyzeqgRZQ_t5Wcig_uMbrIn5cPt4dUdiaceQdzfzGm9wON00MhA"
@@ -24,50 +123,16 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
   end
 
   test "lists all jobs" do
-    assert_equal(
-      [
-        Zaikio::MissionControl::Jobs::Booklet,
-        Zaikio::MissionControl::Jobs::Box,
-        Zaikio::MissionControl::Jobs::Brochure,
-        Zaikio::MissionControl::Jobs::BusinessCard,
-        Zaikio::MissionControl::Jobs::Card,
-        Zaikio::MissionControl::Jobs::Carton,
-        Zaikio::MissionControl::Jobs::CartonTwoPiece,
-        Zaikio::MissionControl::Jobs::ComplimentSlip,
-        Zaikio::MissionControl::Jobs::ContinuationSheet,
-        Zaikio::MissionControl::Jobs::CoverLetter,
-        Zaikio::MissionControl::Jobs::Envelope,
-        Zaikio::MissionControl::Jobs::Flyer,
-        Zaikio::MissionControl::Jobs::Folder,
-        Zaikio::MissionControl::Jobs::FoldingCard,
-        Zaikio::MissionControl::Jobs::HardcoverBook,
-        Zaikio::MissionControl::Jobs::Label,
-        Zaikio::MissionControl::Jobs::Leaflet,
-        Zaikio::MissionControl::Jobs::LetterHead,
-        Zaikio::MissionControl::Jobs::Magazine,
-        Zaikio::MissionControl::Jobs::Map,
-        Zaikio::MissionControl::Jobs::NcrPad,
-        Zaikio::MissionControl::Jobs::Newspaper,
-        Zaikio::MissionControl::Jobs::Notebook,
-        Zaikio::MissionControl::Jobs::Postcard,
-        Zaikio::MissionControl::Jobs::Poster,
-        Zaikio::MissionControl::Jobs::SelfMailer,
-        Zaikio::MissionControl::Jobs::Sheet,
-        Zaikio::MissionControl::Jobs::SoftcoverBook
-      ],
-      Zaikio::MissionControl.job_klasses
-    )
+    assert_equal(JOB_KIND_CLASSES, Zaikio::MissionControl.job_klasses)
+    assert_equal(JOB_KINDS, Zaikio::MissionControl.jobs)
+  end
 
-    assert_equal(
-      %i[
-        booklet box brochure business_card card carton carton_two_piece
-        compliment_slip continuation_sheet cover_letter envelope
-        flyer folder folding_card hardcover_book label leaflet letter_head magazine
-        map ncr_pad newspaper notebook postcard poster
-        self_mailer sheet softcover_book
-      ],
-      Zaikio::MissionControl.jobs
-    )
+  test "every job part kind has a translation in all locales" do
+    JOB_KINDS.each do |job_kind|
+      assert I18n.available_locales.all? do |locale|
+        I18n.exists?("activemodel.models.zaikio/mission_control/jobs/#{job_kind}", locale)
+      end
+    end
   end
 
   test "every existing file in jobs, is required in MissionControl" do
@@ -79,48 +144,16 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
   end
 
   test "lists all parts" do
-    assert_equal(
-      [
-        Zaikio::MissionControl::Parts::Back,
-        Zaikio::MissionControl::Parts::BusinessCard,
-        Zaikio::MissionControl::Parts::Card,
-        Zaikio::MissionControl::Parts::Carton,
-        Zaikio::MissionControl::Parts::Case,
-        Zaikio::MissionControl::Parts::ComplimentSlip,
-        Zaikio::MissionControl::Parts::Content,
-        Zaikio::MissionControl::Parts::ContinuationSheet,
-        Zaikio::MissionControl::Parts::Cover,
-        Zaikio::MissionControl::Parts::CoverLetter,
-        Zaikio::MissionControl::Parts::Endpaper,
-        Zaikio::MissionControl::Parts::Envelope,
-        Zaikio::MissionControl::Parts::Flyer,
-        Zaikio::MissionControl::Parts::Folder,
-        Zaikio::MissionControl::Parts::FoldingCard,
-        Zaikio::MissionControl::Parts::Insert,
-        Zaikio::MissionControl::Parts::Jacket,
-        Zaikio::MissionControl::Parts::Label,
-        Zaikio::MissionControl::Parts::Leaflet,
-        Zaikio::MissionControl::Parts::LetterHead,
-        Zaikio::MissionControl::Parts::Lid,
-        Zaikio::MissionControl::Parts::MapSheet,
-        Zaikio::MissionControl::Parts::Outsert,
-        Zaikio::MissionControl::Parts::Postcard,
-        Zaikio::MissionControl::Parts::Poster,
-        Zaikio::MissionControl::Parts::SelfMailer,
-        Zaikio::MissionControl::Parts::Sheet
-      ],
-      Zaikio::MissionControl.part_klasses
-    )
+    assert_equal(PART_KIND_CLASSES, Zaikio::MissionControl.part_klasses)
+    assert_equal(PART_KINDS, Zaikio::MissionControl.parts)
+  end
 
-    assert_equal(
-      %i[
-        back business_card card carton case compliment_slip
-        content continuation_sheet cover cover_letter endpaper
-        envelope flyer folder folding_card insert jacket label leaflet letter_head
-        lid map_sheet outsert postcard poster self_mailer sheet
-      ],
-      Zaikio::MissionControl.parts
-    )
+  test "every part kind has a translation in all locales" do
+    PART_KINDS.each do |part_kind|
+      assert I18n.available_locales.all? do |locale|
+        I18n.exists?("activemodel.models.zaikio/mission_control/parts/#{part_kind}", locale)
+      end
+    end
   end
 
   test "every existing file in parts, is required in MissionControl" do
@@ -132,34 +165,16 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
   end
 
   test "lists all finishings" do
-    assert_equal(
-      [
-        Zaikio::MissionControl::Finishings::CombBinding,
-        Zaikio::MissionControl::Finishings::Embossing,
-        Zaikio::MissionControl::Finishings::FoilStamp,
-        Zaikio::MissionControl::Finishings::Glue,
-        Zaikio::MissionControl::Finishings::HeadBand,
-        Zaikio::MissionControl::Finishings::Hole,
-        Zaikio::MissionControl::Finishings::Lamination,
-        Zaikio::MissionControl::Finishings::PerfectBinding,
-        Zaikio::MissionControl::Finishings::Perforation,
-        Zaikio::MissionControl::Finishings::RingBinding,
-        Zaikio::MissionControl::Finishings::SaddleStitch,
-        Zaikio::MissionControl::Finishings::SpiralBinding,
-        Zaikio::MissionControl::Finishings::StripBinding,
-        Zaikio::MissionControl::Finishings::ThreadSewing
-      ],
-      Zaikio::MissionControl.finishing_klasses
-    )
+    assert_equal(FINISHING_CLASSES, Zaikio::MissionControl.finishing_klasses)
+    assert_equal(FINISHINGS, Zaikio::MissionControl.finishings)
+  end
 
-    assert_equal(
-      %i[
-        comb_binding embossing foil_stamp glue head_band hole
-        lamination perfect_binding perforation ring_binding
-        saddle_stitch spiral_binding strip_binding thread_sewing
-      ],
-      Zaikio::MissionControl.finishings
-    )
+  test "every finishing has a translation in all locales" do
+    FINISHINGS.each do |job_kind|
+      assert I18n.available_locales.all? do |locale|
+        I18n.exists?("activemodel.models.zaikio/mission_control/finishings/#{job_kind}", locale)
+      end
+    end
   end
 
   test "every existing file in finishing, is required in MissionControl" do
