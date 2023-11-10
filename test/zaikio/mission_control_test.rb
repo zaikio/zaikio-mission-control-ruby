@@ -2,17 +2,22 @@ require "test_helper"
 
 class Zaikio::MissionControlTest < ActiveSupport::TestCase
   JOB_KIND_CLASSES = [
+    Zaikio::MissionControl::Jobs::Banner,
     Zaikio::MissionControl::Jobs::Booklet,
     Zaikio::MissionControl::Jobs::Box,
     Zaikio::MissionControl::Jobs::Brochure,
     Zaikio::MissionControl::Jobs::BusinessCard,
+    Zaikio::MissionControl::Jobs::Calendar,
     Zaikio::MissionControl::Jobs::Card,
     Zaikio::MissionControl::Jobs::Carton,
     Zaikio::MissionControl::Jobs::CartonTwoPiece,
+    Zaikio::MissionControl::Jobs::Cloth,
     Zaikio::MissionControl::Jobs::ComplimentSlip,
     Zaikio::MissionControl::Jobs::ContinuationSheet,
     Zaikio::MissionControl::Jobs::CoverLetter,
     Zaikio::MissionControl::Jobs::Envelope,
+    Zaikio::MissionControl::Jobs::Fabric,
+    Zaikio::MissionControl::Jobs::Flag,
     Zaikio::MissionControl::Jobs::Flyer,
     Zaikio::MissionControl::Jobs::Folder,
     Zaikio::MissionControl::Jobs::FoldingCard,
@@ -25,19 +30,20 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
     Zaikio::MissionControl::Jobs::NcrPad,
     Zaikio::MissionControl::Jobs::Newspaper,
     Zaikio::MissionControl::Jobs::Notebook,
+    Zaikio::MissionControl::Jobs::Pen,
     Zaikio::MissionControl::Jobs::Postcard,
     Zaikio::MissionControl::Jobs::Poster,
     Zaikio::MissionControl::Jobs::SelfMailer,
     Zaikio::MissionControl::Jobs::Sheet,
+    Zaikio::MissionControl::Jobs::Sign,
     Zaikio::MissionControl::Jobs::SoftcoverBook
   ].freeze
 
   JOB_KINDS = %i[
-    booklet box brochure business_card card carton carton_two_piece
-    compliment_slip continuation_sheet cover_letter envelope
-    flyer folder folding_card hardcover_book label leaflet letter_head magazine
-    map ncr_pad newspaper notebook postcard poster
-    self_mailer sheet softcover_book
+    banner booklet box brochure business_card calendar card carton carton_two_piece cloth compliment_slip
+    continuation_sheet cover_letter envelope fabric flag flyer folder folding_card hardcover_book label
+    leaflet letter_head magazine map ncr_pad newspaper notebook pen postcard poster self_mailer sheet
+    sign softcover_book
   ].freeze
 
   PART_KIND_CLASSES = [
