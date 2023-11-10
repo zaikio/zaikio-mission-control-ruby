@@ -329,8 +329,4 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
       end
     end
   end
-
-  private
-
-  def active_model_translation_keys(locale) = I18n.backend.translations[locale][:activemodel][:models].keys
 end

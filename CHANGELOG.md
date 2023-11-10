@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.1]
+
+- Add job and part kind translations for `Card`.
+
 ## [0.5.0]
 
 - Add new `Card` Mission Control `Job` kinds.
@@ -87,7 +91,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add finishings specification
 - Add jobs and parts specification
 
-[Unreleased]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.5.0..HEAD
+[Unreleased]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.5.1..HEAD
+[0.5.1]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.5.0..v0.5.1
 [0.5.0]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.4.2..v0.5.0
 [0.4.2]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.4.0..v0.4.2
 [0.4.1]: https://github.com/zaikio/zaikio-mission_control-ruby/compare/v0.4.0..v0.4.1
