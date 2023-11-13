@@ -1,0 +1,21 @@
+Ctp:
+  plate:
+    required: true
+Cutting:
+  product:
+    required: true
+Folding:
+  fold:
+    required: true
+Lamination:
+  laminated_sheet:
+    required: true
+Printing:
+  sheet:
+    required: false
+  roll:
+    required: false
+ThreadSewing:
+  book_block:
+    required: true
+

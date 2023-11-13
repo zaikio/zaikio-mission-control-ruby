@@ -13,6 +13,9 @@ require "zaikio/mission_control/parts/base"
 # Finishings
 require "zaikio/mission_control/finishings/base"
 
+# Worksteps
+require "zaikio/mission_control/worksteps/base"
+
 # Intermediate products
 require "zaikio/mission_control/intermediate_products/base"
 
