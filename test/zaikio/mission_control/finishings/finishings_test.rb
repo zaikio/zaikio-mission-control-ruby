@@ -5,6 +5,7 @@ class Zaikio::MissionControl::FinishingsTest < ActiveSupport::TestCase
     expected = %i[
       CombBinding
       Embossing
+      Engraving
       FoilStamp
       Glue
       HeadBand

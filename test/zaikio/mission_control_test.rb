@@ -86,6 +86,7 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
   FINISHING_CLASSES = [
     Zaikio::MissionControl::Finishings::CombBinding,
     Zaikio::MissionControl::Finishings::Embossing,
+    Zaikio::MissionControl::Finishings::Engraving,
     Zaikio::MissionControl::Finishings::FoilStamp,
     Zaikio::MissionControl::Finishings::Glue,
     Zaikio::MissionControl::Finishings::HeadBand,
@@ -101,7 +102,7 @@ class Zaikio::MissionControlTest < ActiveSupport::TestCase
   ].freeze
 
   FINISHINGS = %i[
-    comb_binding embossing foil_stamp glue head_band hole
+    comb_binding embossing engraving foil_stamp glue head_band hole
     lamination perfect_binding perforation ring_binding
     saddle_stitch spiral_binding strip_binding thread_sewing
   ].freeze
