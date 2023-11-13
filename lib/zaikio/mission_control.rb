@@ -39,20 +39,6 @@ require "zaikio/mission_control/parts/sheet"
 
 # Finishings
 require "zaikio/mission_control/finishings/base"
-require "zaikio/mission_control/finishings/comb_binding"
-require "zaikio/mission_control/finishings/embossing"
-require "zaikio/mission_control/finishings/foil_stamp"
-require "zaikio/mission_control/finishings/glue"
-require "zaikio/mission_control/finishings/head_band"
-require "zaikio/mission_control/finishings/hole"
-require "zaikio/mission_control/finishings/lamination"
-require "zaikio/mission_control/finishings/perforation"
-require "zaikio/mission_control/finishings/ring_binding"
-require "zaikio/mission_control/finishings/perfect_binding"
-require "zaikio/mission_control/finishings/saddle_stitch"
-require "zaikio/mission_control/finishings/spiral_binding"
-require "zaikio/mission_control/finishings/strip_binding"
-require "zaikio/mission_control/finishings/thread_sewing"
 
 # Models
 require "zaikio/mission_control/job"
