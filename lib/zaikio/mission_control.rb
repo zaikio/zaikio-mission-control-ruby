@@ -1,4 +1,3 @@
-# rubocop:disable Layout/LineLength
 require "faraday"
 require "spyke"
 require "zaikio-client-helpers"
@@ -9,15 +8,10 @@ require "zaikio/mission_control/base"
 require "zaikio/mission_control/jobs/base"
 
 # Parts
+require "zaikio/mission_control/parts/back"
 require "zaikio/mission_control/parts/base"
-require "zaikio/mission_control/parts/content"
-require "zaikio/mission_control/parts/cover"
-require "zaikio/mission_control/parts/insert"
-require "zaikio/mission_control/parts/outsert"
-require "zaikio/mission_control/parts/card"
-require "zaikio/mission_control/parts/carton"
-require "zaikio/mission_control/parts/lid"
 require "zaikio/mission_control/parts/business_card"
+require "zaikio/mission_control/parts/card"
 require "zaikio/mission_control/parts/carton"
 require "zaikio/mission_control/parts/case"
 require "zaikio/mission_control/parts/compliment_slip"
@@ -30,8 +24,7 @@ require "zaikio/mission_control/parts/envelope"
 require "zaikio/mission_control/parts/flyer"
 require "zaikio/mission_control/parts/folder"
 require "zaikio/mission_control/parts/folding_card"
-require "zaikio/mission_control/parts/case"
-require "zaikio/mission_control/parts/endpaper"
+require "zaikio/mission_control/parts/insert"
 require "zaikio/mission_control/parts/jacket"
 require "zaikio/mission_control/parts/label"
 require "zaikio/mission_control/parts/leaflet"
@@ -58,12 +51,6 @@ require "zaikio/mission_control/worksteps/thread_sewing"
 
 # Intermediate products
 require "zaikio/mission_control/intermediate_products/base"
-require "zaikio/mission_control/intermediate_products/book_block"
-require "zaikio/mission_control/intermediate_products/fold"
-require "zaikio/mission_control/intermediate_products/laminated_sheet"
-require "zaikio/mission_control/intermediate_products/plate"
-require "zaikio/mission_control/intermediate_products/product"
-require "zaikio/mission_control/intermediate_products/sheet"
 
 # Models
 require "zaikio/mission_control/color"
@@ -138,8 +125,6 @@ module Zaikio
       end
 
       def jobs
-        binding.pry
-
         @jobs ||= job_klasses.map { |k| k.name.demodulize.underscore.to_sym }
       end
 
