@@ -42,12 +42,6 @@ require "zaikio/mission_control/finishings/base"
 
 # Worksteps
 require "zaikio/mission_control/worksteps/base"
-require "zaikio/mission_control/worksteps/ctp"
-require "zaikio/mission_control/worksteps/cutting"
-require "zaikio/mission_control/worksteps/folding"
-require "zaikio/mission_control/worksteps/lamination"
-require "zaikio/mission_control/worksteps/printing"
-require "zaikio/mission_control/worksteps/thread_sewing"
 
 # Intermediate products
 require "zaikio/mission_control/intermediate_products/base"
