@@ -3,8 +3,9 @@ require "spyke"
 require "zaikio-client-helpers"
 require "zaikio/mission_control/configuration"
 
-# Jobs
 require "zaikio/mission_control/base"
+
+# Jobs
 require "zaikio/mission_control/jobs/base"
 
 # Parts
@@ -20,24 +21,24 @@ require "zaikio/mission_control/worksteps/base"
 require "zaikio/mission_control/intermediate_products/base"
 
 # Models
-require "zaikio/mission_control/job"
-require "zaikio/mission_control/part"
 require "zaikio/mission_control/color"
 require "zaikio/mission_control/contact"
 require "zaikio/mission_control/customer"
 require "zaikio/mission_control/desired_substrate"
 require "zaikio/mission_control/execution"
+require "zaikio/mission_control/file_reference"
 require "zaikio/mission_control/finishing_application"
 require "zaikio/mission_control/finishing"
-require "zaikio/mission_control/file_reference"
+require "zaikio/mission_control/intermediate_product"
+require "zaikio/mission_control/job"
 require "zaikio/mission_control/machine"
-require "zaikio/mission_control/order"
 require "zaikio/mission_control/order_line_item"
+require "zaikio/mission_control/order"
+require "zaikio/mission_control/part"
+require "zaikio/mission_control/production_frame"
 require "zaikio/mission_control/shipping_option"
 require "zaikio/mission_control/slot"
-require "zaikio/mission_control/production_frame"
 require "zaikio/mission_control/workstep"
-require "zaikio/mission_control/intermediate_product"
 
 module Zaikio
   module MissionControl
